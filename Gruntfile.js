@@ -61,20 +61,10 @@ module.exports = function (grunt) {
       }
     },
     copy:{
-      img:{
-        files:[
-          {
-            expand:true,
-            cwd:'<%=assets%>/img/',
-            src:['**'],
-            dest:'dist/assets/img'
-          }
-        ]
-      },
       file:{
         expand:true,
         cwd:"src",
-        src:["**",'!assets/**'],
+        src:["**",'!assets/css/**','!assets/js/**'],
         dest:"dist/"
       }
     }
