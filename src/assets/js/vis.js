@@ -8,8 +8,12 @@ var debug = config.debug ? console.log.bind(console) : function() {};
 // 将颜色的数值化为十六进制字符串表示
 var RRGGBB = function(color) {
     var t = Number(color).toString(16).toUpperCase();
-    return t;
+    if(t.length>6){
+        t = t.substring(0,6);
+    }
+    return Array(7 - t.length).join('0') + t;
 };
+
 
 var getCid = function(callback) {
     debug('get cid...');
@@ -28,7 +32,7 @@ var getCid = function(callback) {
         src = document.querySelector('#bofqi object param[name="flashvars"]').getAttribute('value');
         cid = Number(src.match(/cid=(\d+)/)[1]);
     } catch (e) {}
-    debug(cid + '-------here');
+    debug(cid + 'find here');
     if (cid) setTimeout(callback, 0, cid);
     else {
         $.ajax({
@@ -44,13 +48,12 @@ var getCid = function(callback) {
     }
 };
 
-
+//获取时间长度
 var length_transform = function(video_length) {
     var result = video_length.match(/\d{2}/g);
     return result.reduce(function(prev, cur, item, array) {
         return parseInt(prev) * 60 + parseInt(cur);
     });
-    // video_length.match(/(:?(\d{2})\:){1,2}(\d{2})/);
 };
 
 var parseXML = function(content) {
@@ -80,7 +83,7 @@ var parseXML = function(content) {
 };
 
 
-var debug_console = function(data) {
+var vis_danmu = function(data) {
     debug(data);
     $.ajax({
         url: "http://comment.bilibili.com/" + data + '.xml',
@@ -94,6 +97,7 @@ var debug_console = function(data) {
 
 
 var visualize = function(data) {
+
     function print_filter(filter) {
         var f = eval(filter);
         if (typeof(f.length) != "undefined") {} else {}
@@ -107,6 +111,8 @@ var visualize = function(data) {
         } else {}
         console.log(filter + "(" + f.length + ") = " + JSON.stringify(f).replace("[", "[\n\t").replace(/}\,/g, "},\n\t").replace("]", "\n]"));
     }
+
+    
     var time_cut = 50;
     var row_width = $(".row>div").width();
     var Barchart = dc.barChart('#danmu-bar');
@@ -151,6 +157,7 @@ var visualize = function(data) {
     var quarterGroup2 = quarter2.group().reduceSum(function(d) {
         return 1;
     });
+
     print_filter(ratioGroup);
 
     quarterChart /* dc.pieChart('#quarter-chart', 'chartGroup') */
@@ -174,6 +181,7 @@ var visualize = function(data) {
         .radius(80)
         .dimension(quarter2)
         .group(quarterGroup2)
+
     Barchart
         .height(400)
         .width(row_width)
@@ -195,6 +203,7 @@ var visualize = function(data) {
         .xUnits(function() {
             return time_cut;
         });
+
     LineChart
         .width(row_width)
         .height(150)
@@ -228,6 +237,7 @@ var visualize = function(data) {
         if (seconds < 10) { seconds = "0" + seconds; }
         return hours + ':' + minutes + ':' + seconds;
     };
+
     nasdaqTable /* dc.dataTable('.dc-data-table', 'chartGroup') */
         .dimension(cls)
         // Data table does not use crossfilter group but rather a closure
@@ -291,6 +301,7 @@ var visualize = function(data) {
         .on('renderlet', function(table) {
             table.selectAll('.dc-table-group').classed('info', true);
         });
+
     nasdaqCount /* dc.dataCount('.dc-data-count', 'chartGroup'); */
         .dimension(ndx)
         .group(all)
@@ -302,7 +313,13 @@ var visualize = function(data) {
     dc.renderAll();
 };
 
-getCid(debug_console);
+
+function main(){
+
+    getCid(vis_danmu);
+
+
+}
 
 // window.onload=function(){
 //   var rs = getCid(debug_console);
