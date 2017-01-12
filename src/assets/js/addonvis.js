@@ -12,15 +12,15 @@ $("link")[0].before(iLink);
 
 //jquery
 iScript = document.createElement("script");
-iScript.type = "text/javascript"
-iScript.src = serverIp + 'assets/js/jquery.js' 
+iScript.type = "text/javascript";
+iScript.src = serverIp + 'assets/js/jquery.js'; 
 document.getElementsByTagName("head")[0].appendChild(iScript);
 
 
 //crossfilter
 iScript = document.createElement("script");
-iScript.type = "text/javascript"
-iScript.src = serverIp + 'assets/js/crossfilter.js' 
+iScript.type = "text/javascript";
+iScript.src = serverIp + 'assets/js/crossfilter.js';
 document.getElementsByTagName("head")[0].appendChild(iScript); 
 
 
@@ -55,12 +55,12 @@ var timer = setInterval(function(){
 //添加一个VIS的BUTTON
 function showVisBotton(){
     var btn = document.createElement("div");
-    btn.setAttribute("class",'btn btn-primary btn-xs');
+    btn.setAttribute("class",'bootstrap-custom btn btn-primary btn-xs');
     btn.setAttribute("data-toggle","modal");
     btn.setAttribute("data-target","#myModal");
     btn.innerHTML = 'VIS <br>该视频';
     $(".bgray-btn.show")[0].after(btn);
-}
+};
 
 /*
 
@@ -86,16 +86,17 @@ function showVisModal(){
 + "      </div>"
 + "    </div>"
 + "  </div>"
-+ "</div>"
++ "</div>";
     var modal = document.createElement("div");
-    modal.setAttribute("","")
+    modal.setAttribute("class","bootstrap-custom");
     modal.innerHTML = html;
     $("body")[0].appendChild(modal);
-}
+    console.log("done!");
+};
 
 
-// showVisBotton();
-// showVisModal()
+ showVisBotton();
+ showVisModal()
 
 
 

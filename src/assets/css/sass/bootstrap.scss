@@ -1,4 +1,6 @@
 //sass sass/bootstrap.scss:bootstrap.css --watch
-@import "./bootstrap/customvariables";
-@import "./bootstrap/bootstrap";
-@import "./bootstrap/custom";
+.bootstrap-custom{
+    @import "./bootstrap/customvariables";
+    @import "./bootstrap/bootstrap";
+    @import "./bootstrap/custom";
+}
