@@ -3,6 +3,8 @@ var serverIp = 'http://127.0.0.1:8888/';
 
 
 
+
+
 iLink = document.createElement("link");
 iLink.rel="stylesheet";
 iLink.type = 'text/css';
@@ -17,6 +19,12 @@ iLink.type = 'text/css';
 iLink.href= serverIp + "assets/css/bootstrap.css";
 $("link")[0].before(iLink); 
 
+
+ iLink = document.createElement("link");
+ iLink.rel="stylesheet";
+ iLink.type = 'text/css';
+ iLink.href= "https://cdn.datatables.net/1.10.13/css/dataTables.bootstrap.min.css";
+ $("link")[0].before(iLink); 
 
 //jquery
 iScript = document.createElement("script");
@@ -49,15 +57,28 @@ var timer = setInterval(function(){
     iScript.src= serverIp + "assets/js/bootstrap.js";
     $("head")[0].appendChild(iScript); 
 
-
+    
     //dc 
     iScript = document.createElement("script");
     iScript.type = "text/javascript";
     iScript.src = serverIp + "assets/js/dc.js";
     document.getElementsByTagName("head")[0].appendChild(iScript); 
+    
+    
+    iScript = document.createElement("script");
+    iScript.type="text/javascript";
+    iScript.src= serverIp + "assets/js/jquery.dataTables.js";
+    $("head")[0].appendChild(iScript); 
+
+
+    iScript = document.createElement("script");
+    iScript.type="text/javascript";
+    iScript.src= serverIp + "assets/js/dataTables.bootstrap.js";
+    $("head")[0].appendChild(iScript); 
+
 
         //vis.js
-       clearInterval(timer);
+    clearInterval(timer);
 
 }, 300);
 
@@ -80,8 +101,8 @@ function initVisBotton(){
 </button>
 */
 function initVisModal(){
-    var html= ['<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">',
-'            <div class="modal-dialog modal-lg ">',
+    var html= ['        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">',
+'            <div class="modal-dialog modal-lg modal-chat">',
 '                <div class="modal-content">',
 '                    <div class="modal-header">',
 '                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>',
@@ -92,34 +113,41 @@ function initVisModal(){
 '                            <div class="row">',
 '                                <div class="col-md-10 col-md-offset-1">',
 '                                    <div id="danmu-line-chart">',
-'                                       ',
 '                                    </div>',
+'                                     <div class="chart-title text-center">弹幕出现时间</div>',
 '                                    <div id="danmu-volume-chart">',
-'                                     <span class="reset" style="display: none;">range: <span class="filter"></span></span>',
+'                                        <span class="reset" style="display: none;">range: <span class="filter"></span></span>',
 '                                        <a class="reset" href="javascript:dc.filterAll();;dc.redrawAll();" style="display: none;">reset</a>',
 '                                    </div>',
 '                                    <div id="danmu-up-chart">',
-'                                       ',
 '                                    </div>',
-'                                    ',
+'                                    <div class="chart-title text-center">弹幕上传时间</div>',
 '                                </div>',
-'                                <div class="col-md-12">',
+'                                <div class="col-md-10 col-md-offset-1">',
 '                                    <div class="row">',
-'                                        <div id="color-chart">',
-'                                            <strong>颜色分布情况</strong>',
+'                                        <div id="color-chart" class="col-md-4 pie-chart">',
+'                                            <strong class="pie-title">颜色分布情况</strong>',
 '                                        </div>',
-'                                        <div id="pos-chart">',
-'                                            <strong>位置分布情况</strong>',
+'                                        <div id="pos-chart" class="col-md-4 pie-chart">',
+'                                            <strong class="pie-title">位置分布情况</strong>',
+'                                        </div>',
+'                                        <div id="char-chart" class="col-md-4 pie-chart">',
+'                                            <strong class="pie-title">弹幕长度分布情况</strong>',
 '                                        </div>',
 '                                    </div>',
 '                                </div>',
-'                                <div class="col-md-12">',
+'                                <div class="col-md-10 col-md-offset-1">',
 '                                    <h3>弹幕部分列表</h3>',
 '                                    <div class="dc-data-count">',
-'                                        <span class="filter-count"></span> selected out of <span class="total-count"></span> records | <a href="javascript:dc.filterAll(); dc.renderAll();">Reset All</a>',
+'                                        <span class="filter-count"></span> selected out of <span class="total-count"></span> records | <a href="javascript:dc.filterAll(); dc.renderAll();$("#danmu-up-chart svg").attr("height", 250);">Reset All</a>',
 '                                    </div>',
 '                                    <table class="table table-hover dc-data-table">',
 '                                    </table>',
+'                                </div>',
+'                                <div class="col-md-10 col-md-offset-1">',
+'                                    <h3>弹幕详情列表</h3>',
+'                                    <div id="full-data-table">',
+'                                    </div>',
 '                                </div>',
 '                            </div>',
 '                        </div>',
@@ -130,7 +158,8 @@ function initVisModal(){
 '                </div>',
 '            </div>',
 '        </div>'].join("");
-
+    
+    
     var modal = document.createElement("div");
     modal.setAttribute("class","bootstrap-custom");
     modal.innerHTML = html;
