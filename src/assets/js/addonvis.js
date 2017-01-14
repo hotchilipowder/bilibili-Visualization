@@ -1,10 +1,6 @@
 
 var serverIp = 'http://127.0.0.1:8888/';
 
-
-
-
-
 iLink = document.createElement("link");
 iLink.rel="stylesheet";
 iLink.type = 'text/css';
@@ -167,8 +163,7 @@ function initVisModal(){
     console.log("done!");
     // vis.main();
 };
-initVisBotton();
-initVisModal();
+
 
 var timer2 = setInterval(function(){ 
     iScript = document.createElement("script");
@@ -177,6 +172,8 @@ var timer2 = setInterval(function(){
     document.getElementsByTagName("head")[0].appendChild(iScript); 
 
     vis.main();
+    initVisBotton();
+    initVisModal();
     // alert('Collect Feedback');
     clearInterval(timer2);
 }, 3000);

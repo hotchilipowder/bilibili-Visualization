@@ -52,7 +52,8 @@ var vis = {
 
         //获取时间长度
         var length_transform = function (video_length) {
-            var result = video_length.match(/\d{2}/g);
+            var result = video_length.match(/\d{2,3}/g);
+            debug(result);
             return result.reduce(function (prev, cur, item, array) {
                 return parseInt(prev) * 60 + parseInt(cur);
             });
@@ -69,6 +70,7 @@ var vis = {
             var video_length = $(".bilibili-player-video-time-total").text();
             video_length = length_transform(video_length);
             data = content;
+            debug(video_length);
             return Array.apply(Array, data.querySelectorAll('d')).map(function (line) {
                 var info = line.getAttribute('p').split(','),
                     text = line.textContent;
@@ -95,9 +97,38 @@ var vis = {
                 async: false,
                 success: function (data) {
                     debug(data);
-                    var danmu = parseXML(data);
+                    try{
+                        var danmu = parseXML(data);
+                    }catch(e){
+                        debug(e);
+                    }
+                    debug("done");
                     debug(danmu);
                     visualize(danmu);
+                },
+                error: function (xhr, textStatus, errorThrown) {
+                    console.log(textStatus);
+                    if (textStatus == 'timeout') {
+                        this.tryCount++;
+                        if (this.tryCount <= this.retryLimit) {
+                            //try again
+                            $.ajax(this);
+                            return;
+                        }
+                        return;
+                    };
+                    
+                    if (xhr.status == 500) {
+                        //handle error
+                    } else {
+                        this.tryCount++;
+                        if (this.tryCount <= this.retryLimit) {
+                            //try again
+                            $.ajax(this);
+                            return;
+                        }
+                        return;
+                    }
                 }
             })
         };
@@ -105,8 +136,6 @@ var vis = {
 
 
         var visualize = function (csv_data) {
-
-           
 
 
             function print_filter(filter) {
@@ -152,6 +181,8 @@ var vis = {
             var video_length = parseFloat(csv_data[1].video_len);
             var video_up_time = new Date($("time").attr("datetime"));
             video_up_time = video_up_time.valueOf() / 1000;
+
+
             var max_smt = 0;
             var min_smt = new Date();
             min_smt = min_smt.valueOf();
@@ -162,10 +193,10 @@ var vis = {
             for (var i = 0; i < csv_data.length; i++) {
                 csv_data[i].time = +csv_data[i].time;
                 csv_data[i].create = +csv_data[i].create;
-                if (csv_data[i].sender < min_smt) {
+                if (csv_data[i].create < min_smt) {
                     min_smt = csv_data[i].create;
                 };
-                if (csv_data[i].sender > max_smt) {
+                if (csv_data[i].create > max_smt) {
                     max_smt = csv_data[i].create;
                 };
                 var content_len = csv_data[i].text.length;
@@ -188,9 +219,13 @@ var vis = {
                 })
             };
 
-            min_smt = video_up_time;
-            //            debug(min_smt);
-            //            debug(max_smt);
+            if(video_up_time){
+                min_smt =video_up_time;
+            };
+
+
+            debug(min_smt);
+            debug(max_smt);
             /* 修改开始出*/
 
             var ndx = crossfilter(data);
@@ -222,7 +257,6 @@ var vis = {
             });
 
             var st = ndx.dimension(function (d) {
-
                 var radio = (d.submitTime - min_smt) / (max_smt - min_smt);
                 return parseInt(radio * up_time_cut) / up_time_cut;
             });
@@ -296,7 +330,10 @@ var vis = {
                     var begin = parseInt(d.key * max_char_num);
                     var end = parseInt((d.key + 1.0 / char_num_cut) * max_char_num);
                     return begin + '~' + end + '字';
-                });
+                })
+                .colors(d3.scale.ordinal().range(["#a6cee3","#1f78b4","#b2df8a","#33a02c","#fb9a99","#e31a1c","#fdbf6f","#ff7f00","#cab2d6","#6a3d9a"]));
+            
+            
             charNumChart
                 .title(function (d) {
                     var begin = parseInt(d.key * max_char_num);
@@ -364,13 +401,18 @@ var vis = {
                 .dimension(cls)
                 .group(ratioGroup)
                 .centerBar(true)
-                .gap(2)
+                .gap(1)
                 .x(d3.scale.linear().domain([0, 1]))
                 .alwaysUseRounding(true)
                 .xUnits(function () {
                     return time_cut;
-                })
-                .X;
+                });
+            
+            
+            danmu_barChart
+                .colors(function (d, i) {
+                    return "#e8799d";
+                });
 
 
             // 
@@ -396,7 +438,7 @@ var vis = {
                 })
                 .xAxis().tickFormat(function (v) {
                     debug(v);
-                    var num = new Number(v * (max_smt - min_smt) + min_smt * 1000);
+                    var num = new Number((v * (max_smt - min_smt) + min_smt) * 1000);
                     var m = new Date(num);
                     var dateString = m.getUTCFullYear() + "/" + (m.getUTCMonth() + 1) + "/" + m.getUTCDate() + " " + m.getUTCHours() + ":" + m.getUTCMinutes() + ":" + m.getUTCSeconds();
                     return dateString;
@@ -471,8 +513,8 @@ var vis = {
                         ' | <a href=\'javascript:dc.filterAll(); dc.renderAll();$("#danmu-up-chart svg").attr("height", 250);\'>Reset All</a>',
                     all: '当前视频所有的弹幕都被选择，可以进行筛选'
                 });
-            
-            
+
+
             function print_table(data) {
                 var table = '<table class="table " id="myTable">' + "<thead><tr>" +
                     "    <th>出现时间</th>" +
