@@ -1,5 +1,5 @@
 
-var serverIp = 'https://raw.githubusercontent.com/h12345jack/bilibili-Visualization/master/src/';
+var serverIp = 'http://127.0.0.1:8888/';
 
 iLink = document.createElement("link");
 iLink.rel="stylesheet";
