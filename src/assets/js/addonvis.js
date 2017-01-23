@@ -30,11 +30,13 @@ $("link")[0].before(iLink);
   $("link")[0].before(iLink); 
 
 
-//jquery
-iScript = document.createElement("script");
-iScript.type = "text/javascript";
-iScript.src = serverIp + 'assets/js/jquery.js'; 
-document.getElementsByTagName("head")[0].appendChild(iScript);
+
+// 去掉带入的高版本jquery，去掉bootstrap的报错。
+// //jquery
+// iScript = document.createElement("script");
+// iScript.type = "text/javascript";
+// iScript.src = serverIp + 'assets/js/jquery.js'; 
+// document.getElementsByTagName("head")[0].appendChild(iScript);
 
 
 //crossfilter
@@ -75,11 +77,7 @@ var timer = setInterval(function(){
     $("head")[0].appendChild(iScript); 
 
 
-    iScript = document.createElement("script");
-    iScript.type="text/javascript";
-    iScript.src= serverIp + "assets/js/dataTables.bootstrap.js";
-    $("head")[0].appendChild(iScript); 
-
+    console.log("Time1 Finished!");
 
         //vis.js
     clearInterval(timer);
@@ -121,7 +119,7 @@ function initVisModal(){
 '                                     <div class="chart-title text-center">弹幕出现时间</div>',
 '                                    <div id="danmu-volume-chart">',
 '                                        <span class="reset" style="display: none;">range: <span class="filter"></span></span>',
-'                                        <a class="reset" href="javascript:dc.filterAll(); dc.renderAll();$("#danmu-up-chart svg").attr("height", 250);" style="display: none;">reset</a>',
+'                                        <a class="reset" href="javascript:dc.filterAll(); dc.renderAll(); $(\'#danmu-up-chart svg\').attr(\'height\', 250);" style="display: none;">reset</a>',
 '                                    </div>',
 '                                    <div id="danmu-up-chart">',
 '                                    </div>',
@@ -182,7 +180,9 @@ var timer2 = setInterval(function(){
     vis.main();
     initVisBotton();
     initVisModal();
-    // alert('Collect Feedback');
+
+    console.log("Time2 Finished!");
+
     clearInterval(timer2);
 }, 3000);
 

@@ -354,7 +354,7 @@ var vis = {
                 .transitionDuration(1000)
                 .dimension(cls)
                 .group(ratioGroup)
-                .mouseZoomable(true)
+                // .mouseZoomable(true)
                 .renderHorizontalGridLines(true)
                 .rangeChart(danmu_barChart)
                 .x(d3.scale.linear().domain([0, 1]))
@@ -533,7 +533,11 @@ var vis = {
                     table = table + ("<td>" + data[i].color + "</td>");
                     table = table + ("<td>" + data[i].size + "</td>");
                     table = table + ("<td>" + data[i].text + "</td>");
-                    table = table + ("<td>" + data[i].create + "</td>");
+                    create_time = new Date(Number(data[i].create)*1000);
+                    create_date = create_time.getUTCFullYear()+"年"+(create_time.getUTCMonth()+1)+"月";
+                    create_date = create_date + create_time.getUTCDate() + "日"+create_time.getUTCHours()+":";
+                    create_date = create_date + create_time.getUTCMinutes();
+                    table = table + ("<td>" + create_date + "</td>");
                     table = table + ("<td>" + data[i].sender + "</td>");
                     table = table + '</tr>';
                 }

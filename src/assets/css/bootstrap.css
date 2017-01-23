@@ -3625,73 +3625,6 @@
       border-top-color: #e4b9c0; }
     .bootstrap-custom .alert-danger .alert-link {
       color: #843534; }
-@-webkit-keyframes progress-bar-stripes {
-  from {
-    background-position: 40px 0; }
-  to {
-    background-position: 0 0; } }
-@keyframes progress-bar-stripes {
-  from {
-    background-position: 40px 0; }
-  to {
-    background-position: 0 0; } }
-  .bootstrap-custom .progress {
-    overflow: hidden;
-    height: 20px;
-    margin-bottom: 20px;
-    background-color: #f5f5f5;
-    border-radius: 4px;
-    -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
-    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1); }
-  .bootstrap-custom .progress-bar {
-    float: left;
-    width: 0%;
-    height: 100%;
-    font-size: 12px;
-    line-height: 20px;
-    color: #fff;
-    text-align: center;
-    background-color: #ffc000;
-    -webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
-    box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
-    -webkit-transition: width 0.6s ease;
-    -o-transition: width 0.6s ease;
-    transition: width 0.6s ease; }
-  .bootstrap-custom .progress-striped .progress-bar,
-  .bootstrap-custom .progress-bar-striped {
-    background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
-    background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
-    background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
-    background-size: 40px 40px; }
-  .bootstrap-custom .progress.active .progress-bar,
-  .bootstrap-custom .progress-bar.active {
-    -webkit-animation: progress-bar-stripes 2s linear infinite;
-    -o-animation: progress-bar-stripes 2s linear infinite;
-    animation: progress-bar-stripes 2s linear infinite; }
-  .bootstrap-custom .progress-bar-success {
-    background-color: #5cb85c; }
-    .progress-striped .bootstrap-custom .progress-bar-success {
-      background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
-      background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
-      background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent); }
-  .bootstrap-custom .progress-bar-info {
-    background-color: #5bc0de; }
-    .progress-striped .bootstrap-custom .progress-bar-info {
-      background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
-      background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
-      background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent); }
-  .bootstrap-custom .progress-bar-warning {
-    background-color: #f0ad4e; }
-    .progress-striped .bootstrap-custom .progress-bar-warning {
-      background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
-      background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
-      background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent); }
-  .bootstrap-custom .progress-bar-danger {
-    background-color: #d9534f; }
-    .progress-striped .bootstrap-custom .progress-bar-danger {
-      background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
-      background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
-      background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent); }
   .bootstrap-custom .media {
     margin-top: 15px; }
     .bootstrap-custom .media:first-child {
@@ -3872,6 +3805,285 @@
   .bootstrap-custom .list-group-item-text {
     margin-bottom: 0;
     line-height: 1.3; }
+  .bootstrap-custom .panel {
+    margin-bottom: 20px;
+    background-color: #fff;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05); }
+  .bootstrap-custom .panel-body {
+    padding: 15px; }
+    .bootstrap-custom .panel-body:before, .bootstrap-custom .panel-body:after {
+      content: " ";
+      display: table; }
+    .bootstrap-custom .panel-body:after {
+      clear: both; }
+  .bootstrap-custom .panel-heading {
+    padding: 10px 15px;
+    border-bottom: 1px solid transparent;
+    border-top-right-radius: 3px;
+    border-top-left-radius: 3px; }
+    .bootstrap-custom .panel-heading > .dropdown .dropdown-toggle {
+      color: inherit; }
+  .bootstrap-custom .panel-title {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 16px;
+    color: inherit; }
+    .bootstrap-custom .panel-title > a,
+    .bootstrap-custom .panel-title > small,
+    .bootstrap-custom .panel-title > .small,
+    .bootstrap-custom .panel-title > small > a,
+    .bootstrap-custom .panel-title > .small > a {
+      color: inherit; }
+  .bootstrap-custom .panel-footer {
+    padding: 10px 15px;
+    background-color: #f5f5f5;
+    border-top: 1px solid #ddd;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px; }
+  .bootstrap-custom .panel > .list-group,
+  .bootstrap-custom .panel > .panel-collapse > .list-group {
+    margin-bottom: 0; }
+    .bootstrap-custom .panel > .list-group .list-group-item,
+    .bootstrap-custom .panel > .panel-collapse > .list-group .list-group-item {
+      border-width: 1px 0;
+      border-radius: 0; }
+    .bootstrap-custom .panel > .list-group:first-child .list-group-item:first-child,
+    .bootstrap-custom .panel > .panel-collapse > .list-group:first-child .list-group-item:first-child {
+      border-top: 0;
+      border-top-right-radius: 3px;
+      border-top-left-radius: 3px; }
+    .bootstrap-custom .panel > .list-group:last-child .list-group-item:last-child,
+    .bootstrap-custom .panel > .panel-collapse > .list-group:last-child .list-group-item:last-child {
+      border-bottom: 0;
+      border-bottom-right-radius: 3px;
+      border-bottom-left-radius: 3px; }
+  .bootstrap-custom .panel > .panel-heading + .panel-collapse > .list-group .list-group-item:first-child {
+    border-top-right-radius: 0;
+    border-top-left-radius: 0; }
+  .bootstrap-custom .panel-heading + .list-group .list-group-item:first-child {
+    border-top-width: 0; }
+  .bootstrap-custom .list-group + .panel-footer {
+    border-top-width: 0; }
+  .bootstrap-custom .panel > .table,
+  .bootstrap-custom .panel > .table-responsive > .table,
+  .bootstrap-custom .panel > .panel-collapse > .table {
+    margin-bottom: 0; }
+    .bootstrap-custom .panel > .table caption,
+    .bootstrap-custom .panel > .table-responsive > .table caption,
+    .bootstrap-custom .panel > .panel-collapse > .table caption {
+      padding-left: 15px;
+      padding-right: 15px; }
+  .bootstrap-custom .panel > .table:first-child,
+  .bootstrap-custom .panel > .table-responsive:first-child > .table:first-child {
+    border-top-right-radius: 3px;
+    border-top-left-radius: 3px; }
+    .bootstrap-custom .panel > .table:first-child > thead:first-child > tr:first-child,
+    .bootstrap-custom .panel > .table:first-child > tbody:first-child > tr:first-child,
+    .bootstrap-custom .panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child,
+    .bootstrap-custom .panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child {
+      border-top-left-radius: 3px;
+      border-top-right-radius: 3px; }
+      .bootstrap-custom .panel > .table:first-child > thead:first-child > tr:first-child td:first-child,
+      .bootstrap-custom .panel > .table:first-child > thead:first-child > tr:first-child th:first-child,
+      .bootstrap-custom .panel > .table:first-child > tbody:first-child > tr:first-child td:first-child,
+      .bootstrap-custom .panel > .table:first-child > tbody:first-child > tr:first-child th:first-child,
+      .bootstrap-custom .panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child td:first-child,
+      .bootstrap-custom .panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child th:first-child,
+      .bootstrap-custom .panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child td:first-child,
+      .bootstrap-custom .panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child th:first-child {
+        border-top-left-radius: 3px; }
+      .bootstrap-custom .panel > .table:first-child > thead:first-child > tr:first-child td:last-child,
+      .bootstrap-custom .panel > .table:first-child > thead:first-child > tr:first-child th:last-child,
+      .bootstrap-custom .panel > .table:first-child > tbody:first-child > tr:first-child td:last-child,
+      .bootstrap-custom .panel > .table:first-child > tbody:first-child > tr:first-child th:last-child,
+      .bootstrap-custom .panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child td:last-child,
+      .bootstrap-custom .panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child th:last-child,
+      .bootstrap-custom .panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child td:last-child,
+      .bootstrap-custom .panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child th:last-child {
+        border-top-right-radius: 3px; }
+  .bootstrap-custom .panel > .table:last-child,
+  .bootstrap-custom .panel > .table-responsive:last-child > .table:last-child {
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px; }
+    .bootstrap-custom .panel > .table:last-child > tbody:last-child > tr:last-child,
+    .bootstrap-custom .panel > .table:last-child > tfoot:last-child > tr:last-child,
+    .bootstrap-custom .panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child,
+    .bootstrap-custom .panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child {
+      border-bottom-left-radius: 3px;
+      border-bottom-right-radius: 3px; }
+      .bootstrap-custom .panel > .table:last-child > tbody:last-child > tr:last-child td:first-child,
+      .bootstrap-custom .panel > .table:last-child > tbody:last-child > tr:last-child th:first-child,
+      .bootstrap-custom .panel > .table:last-child > tfoot:last-child > tr:last-child td:first-child,
+      .bootstrap-custom .panel > .table:last-child > tfoot:last-child > tr:last-child th:first-child,
+      .bootstrap-custom .panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child td:first-child,
+      .bootstrap-custom .panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child th:first-child,
+      .bootstrap-custom .panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child td:first-child,
+      .bootstrap-custom .panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child th:first-child {
+        border-bottom-left-radius: 3px; }
+      .bootstrap-custom .panel > .table:last-child > tbody:last-child > tr:last-child td:last-child,
+      .bootstrap-custom .panel > .table:last-child > tbody:last-child > tr:last-child th:last-child,
+      .bootstrap-custom .panel > .table:last-child > tfoot:last-child > tr:last-child td:last-child,
+      .bootstrap-custom .panel > .table:last-child > tfoot:last-child > tr:last-child th:last-child,
+      .bootstrap-custom .panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child td:last-child,
+      .bootstrap-custom .panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child th:last-child,
+      .bootstrap-custom .panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child td:last-child,
+      .bootstrap-custom .panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child th:last-child {
+        border-bottom-right-radius: 3px; }
+  .bootstrap-custom .panel > .panel-body + .table,
+  .bootstrap-custom .panel > .panel-body + .table-responsive,
+  .bootstrap-custom .panel > .table + .panel-body,
+  .bootstrap-custom .panel > .table-responsive + .panel-body {
+    border-top: 1px solid #ddd; }
+  .bootstrap-custom .panel > .table > tbody:first-child > tr:first-child th,
+  .bootstrap-custom .panel > .table > tbody:first-child > tr:first-child td {
+    border-top: 0; }
+  .bootstrap-custom .panel > .table-bordered,
+  .bootstrap-custom .panel > .table-responsive > .table-bordered {
+    border: 0; }
+    .bootstrap-custom .panel > .table-bordered > thead > tr > th:first-child,
+    .bootstrap-custom .panel > .table-bordered > thead > tr > td:first-child,
+    .bootstrap-custom .panel > .table-bordered > tbody > tr > th:first-child,
+    .bootstrap-custom .panel > .table-bordered > tbody > tr > td:first-child,
+    .bootstrap-custom .panel > .table-bordered > tfoot > tr > th:first-child,
+    .bootstrap-custom .panel > .table-bordered > tfoot > tr > td:first-child,
+    .bootstrap-custom .panel > .table-responsive > .table-bordered > thead > tr > th:first-child,
+    .bootstrap-custom .panel > .table-responsive > .table-bordered > thead > tr > td:first-child,
+    .bootstrap-custom .panel > .table-responsive > .table-bordered > tbody > tr > th:first-child,
+    .bootstrap-custom .panel > .table-responsive > .table-bordered > tbody > tr > td:first-child,
+    .bootstrap-custom .panel > .table-responsive > .table-bordered > tfoot > tr > th:first-child,
+    .bootstrap-custom .panel > .table-responsive > .table-bordered > tfoot > tr > td:first-child {
+      border-left: 0; }
+    .bootstrap-custom .panel > .table-bordered > thead > tr > th:last-child,
+    .bootstrap-custom .panel > .table-bordered > thead > tr > td:last-child,
+    .bootstrap-custom .panel > .table-bordered > tbody > tr > th:last-child,
+    .bootstrap-custom .panel > .table-bordered > tbody > tr > td:last-child,
+    .bootstrap-custom .panel > .table-bordered > tfoot > tr > th:last-child,
+    .bootstrap-custom .panel > .table-bordered > tfoot > tr > td:last-child,
+    .bootstrap-custom .panel > .table-responsive > .table-bordered > thead > tr > th:last-child,
+    .bootstrap-custom .panel > .table-responsive > .table-bordered > thead > tr > td:last-child,
+    .bootstrap-custom .panel > .table-responsive > .table-bordered > tbody > tr > th:last-child,
+    .bootstrap-custom .panel > .table-responsive > .table-bordered > tbody > tr > td:last-child,
+    .bootstrap-custom .panel > .table-responsive > .table-bordered > tfoot > tr > th:last-child,
+    .bootstrap-custom .panel > .table-responsive > .table-bordered > tfoot > tr > td:last-child {
+      border-right: 0; }
+    .bootstrap-custom .panel > .table-bordered > thead > tr:first-child > td,
+    .bootstrap-custom .panel > .table-bordered > thead > tr:first-child > th,
+    .bootstrap-custom .panel > .table-bordered > tbody > tr:first-child > td,
+    .bootstrap-custom .panel > .table-bordered > tbody > tr:first-child > th,
+    .bootstrap-custom .panel > .table-responsive > .table-bordered > thead > tr:first-child > td,
+    .bootstrap-custom .panel > .table-responsive > .table-bordered > thead > tr:first-child > th,
+    .bootstrap-custom .panel > .table-responsive > .table-bordered > tbody > tr:first-child > td,
+    .bootstrap-custom .panel > .table-responsive > .table-bordered > tbody > tr:first-child > th {
+      border-bottom: 0; }
+    .bootstrap-custom .panel > .table-bordered > tbody > tr:last-child > td,
+    .bootstrap-custom .panel > .table-bordered > tbody > tr:last-child > th,
+    .bootstrap-custom .panel > .table-bordered > tfoot > tr:last-child > td,
+    .bootstrap-custom .panel > .table-bordered > tfoot > tr:last-child > th,
+    .bootstrap-custom .panel > .table-responsive > .table-bordered > tbody > tr:last-child > td,
+    .bootstrap-custom .panel > .table-responsive > .table-bordered > tbody > tr:last-child > th,
+    .bootstrap-custom .panel > .table-responsive > .table-bordered > tfoot > tr:last-child > td,
+    .bootstrap-custom .panel > .table-responsive > .table-bordered > tfoot > tr:last-child > th {
+      border-bottom: 0; }
+  .bootstrap-custom .panel > .table-responsive {
+    border: 0;
+    margin-bottom: 0; }
+  .bootstrap-custom .panel-group {
+    margin-bottom: 20px; }
+    .bootstrap-custom .panel-group .panel {
+      margin-bottom: 0;
+      border-radius: 4px; }
+      .bootstrap-custom .panel-group .panel + .panel {
+        margin-top: 5px; }
+    .bootstrap-custom .panel-group .panel-heading {
+      border-bottom: 0; }
+      .bootstrap-custom .panel-group .panel-heading + .panel-collapse > .panel-body,
+      .bootstrap-custom .panel-group .panel-heading + .panel-collapse > .list-group {
+        border-top: 1px solid #ddd; }
+    .bootstrap-custom .panel-group .panel-footer {
+      border-top: 0; }
+      .bootstrap-custom .panel-group .panel-footer + .panel-collapse .panel-body {
+        border-bottom: 1px solid #ddd; }
+  .bootstrap-custom .panel-default {
+    border-color: #ddd; }
+    .bootstrap-custom .panel-default > .panel-heading {
+      color: #333333;
+      background-color: #f5f5f5;
+      border-color: #ddd; }
+      .bootstrap-custom .panel-default > .panel-heading + .panel-collapse > .panel-body {
+        border-top-color: #ddd; }
+      .bootstrap-custom .panel-default > .panel-heading .badge {
+        color: #f5f5f5;
+        background-color: #333333; }
+    .bootstrap-custom .panel-default > .panel-footer + .panel-collapse > .panel-body {
+      border-bottom-color: #ddd; }
+  .bootstrap-custom .panel-primary {
+    border-color: #ffc000; }
+    .bootstrap-custom .panel-primary > .panel-heading {
+      color: #fff;
+      background-color: #ffc000;
+      border-color: #ffc000; }
+      .bootstrap-custom .panel-primary > .panel-heading + .panel-collapse > .panel-body {
+        border-top-color: #ffc000; }
+      .bootstrap-custom .panel-primary > .panel-heading .badge {
+        color: #ffc000;
+        background-color: #fff; }
+    .bootstrap-custom .panel-primary > .panel-footer + .panel-collapse > .panel-body {
+      border-bottom-color: #ffc000; }
+  .bootstrap-custom .panel-success {
+    border-color: #d6e9c6; }
+    .bootstrap-custom .panel-success > .panel-heading {
+      color: #3c763d;
+      background-color: #dff0d8;
+      border-color: #d6e9c6; }
+      .bootstrap-custom .panel-success > .panel-heading + .panel-collapse > .panel-body {
+        border-top-color: #d6e9c6; }
+      .bootstrap-custom .panel-success > .panel-heading .badge {
+        color: #dff0d8;
+        background-color: #3c763d; }
+    .bootstrap-custom .panel-success > .panel-footer + .panel-collapse > .panel-body {
+      border-bottom-color: #d6e9c6; }
+  .bootstrap-custom .panel-info {
+    border-color: #bce8f1; }
+    .bootstrap-custom .panel-info > .panel-heading {
+      color: #31708f;
+      background-color: #d9edf7;
+      border-color: #bce8f1; }
+      .bootstrap-custom .panel-info > .panel-heading + .panel-collapse > .panel-body {
+        border-top-color: #bce8f1; }
+      .bootstrap-custom .panel-info > .panel-heading .badge {
+        color: #d9edf7;
+        background-color: #31708f; }
+    .bootstrap-custom .panel-info > .panel-footer + .panel-collapse > .panel-body {
+      border-bottom-color: #bce8f1; }
+  .bootstrap-custom .panel-warning {
+    border-color: #faebcc; }
+    .bootstrap-custom .panel-warning > .panel-heading {
+      color: #8a6d3b;
+      background-color: #fcf8e3;
+      border-color: #faebcc; }
+      .bootstrap-custom .panel-warning > .panel-heading + .panel-collapse > .panel-body {
+        border-top-color: #faebcc; }
+      .bootstrap-custom .panel-warning > .panel-heading .badge {
+        color: #fcf8e3;
+        background-color: #8a6d3b; }
+    .bootstrap-custom .panel-warning > .panel-footer + .panel-collapse > .panel-body {
+      border-bottom-color: #faebcc; }
+  .bootstrap-custom .panel-danger {
+    border-color: #ebccd1; }
+    .bootstrap-custom .panel-danger > .panel-heading {
+      color: #a94442;
+      background-color: #f2dede;
+      border-color: #ebccd1; }
+      .bootstrap-custom .panel-danger > .panel-heading + .panel-collapse > .panel-body {
+        border-top-color: #ebccd1; }
+      .bootstrap-custom .panel-danger > .panel-heading .badge {
+        color: #f2dede;
+        background-color: #a94442; }
+    .bootstrap-custom .panel-danger > .panel-footer + .panel-collapse > .panel-body {
+      border-bottom-color: #ebccd1; }
   .bootstrap-custom .embed-responsive {
     position: relative;
     display: block;
