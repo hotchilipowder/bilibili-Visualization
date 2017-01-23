@@ -523,6 +523,7 @@ var vis = {
                     "    <th>字体大小</th>" +
                     "    <th>内容</th>" +
                     "    <th>弹幕提交时间</th>" +
+                    "    <th>弹幕提交者</th>" +
                     "</tr></thead><tbody>"
                 for (var i = 0; i < data.length; i++) {
                     table = table + "<tr>";
@@ -533,6 +534,7 @@ var vis = {
                     table = table + ("<td>" + data[i].size + "</td>");
                     table = table + ("<td>" + data[i].text + "</td>");
                     table = table + ("<td>" + data[i].create + "</td>");
+                    table = table + ("<td>" + data[i].sender + "</td>");
                     table = table + '</tr>';
                 }
                 table = table + "<tbody></table>";

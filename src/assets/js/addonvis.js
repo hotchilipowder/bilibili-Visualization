@@ -16,11 +16,19 @@ iLink.href= serverIp + "assets/css/bootstrap.css";
 $("link")[0].before(iLink); 
 
 
- iLink = document.createElement("link");
- iLink.rel="stylesheet";
- iLink.type = 'text/css';
- iLink.href= "https://cdn.datatables.net/1.10.13/css/dataTables.bootstrap.min.css";
- $("link")[0].before(iLink); 
+ // iLink = document.createElement("link");
+ // iLink.rel="stylesheet";
+ // iLink.type = 'text/css';
+ // iLink.href= "https://cdn.datatables.net/1.10.13/css/dataTables.bootstrap.min.css";
+ // $("link")[0].before(iLink); 
+
+
+  iLink = document.createElement("link");
+  iLink.rel="stylesheet";
+  iLink.type = 'text/css';
+  iLink.href= "https://cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css";
+  $("link")[0].before(iLink); 
+
 
 //jquery
 iScript = document.createElement("script");
@@ -113,7 +121,7 @@ function initVisModal(){
 '                                     <div class="chart-title text-center">弹幕出现时间</div>',
 '                                    <div id="danmu-volume-chart">',
 '                                        <span class="reset" style="display: none;">range: <span class="filter"></span></span>',
-'                                        <a class="reset" href="javascript:dc.filterAll();;dc.redrawAll();" style="display: none;">reset</a>',
+'                                        <a class="reset" href="javascript:dc.filterAll(); dc.renderAll();$("#danmu-up-chart svg").attr("height", 250);" style="display: none;">reset</a>',
 '                                    </div>',
 '                                    <div id="danmu-up-chart">',
 '                                    </div>',

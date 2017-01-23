@@ -196,6 +196,545 @@
     .bootstrap-custom .table-bordered th,
     .bootstrap-custom .table-bordered td {
       border: 1px solid #ddd !important; } }
+@font-face {
+  font-family: 'Glyphicons Halflings';
+  src: url("../fonts/bootstrap/glyphicons-halflings-regular.eot");
+  src: url("../fonts/bootstrap/glyphicons-halflings-regular.eot?#iefix") format("embedded-opentype"), url("../fonts/bootstrap/glyphicons-halflings-regular.woff2") format("woff2"), url("../fonts/bootstrap/glyphicons-halflings-regular.woff") format("woff"), url("../fonts/bootstrap/glyphicons-halflings-regular.ttf") format("truetype"), url("../fonts/bootstrap/glyphicons-halflings-regular.svg#glyphicons_halflingsregular") format("svg"); }
+  .bootstrap-custom .glyphicon {
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale; }
+  .bootstrap-custom .glyphicon-asterisk:before {
+    content: "\002a"; }
+  .bootstrap-custom .glyphicon-plus:before {
+    content: "\002b"; }
+  .bootstrap-custom .glyphicon-euro:before,
+  .bootstrap-custom .glyphicon-eur:before {
+    content: "\20ac"; }
+  .bootstrap-custom .glyphicon-minus:before {
+    content: "\2212"; }
+  .bootstrap-custom .glyphicon-cloud:before {
+    content: "\2601"; }
+  .bootstrap-custom .glyphicon-envelope:before {
+    content: "\2709"; }
+  .bootstrap-custom .glyphicon-pencil:before {
+    content: "\270f"; }
+  .bootstrap-custom .glyphicon-glass:before {
+    content: "\e001"; }
+  .bootstrap-custom .glyphicon-music:before {
+    content: "\e002"; }
+  .bootstrap-custom .glyphicon-search:before {
+    content: "\e003"; }
+  .bootstrap-custom .glyphicon-heart:before {
+    content: "\e005"; }
+  .bootstrap-custom .glyphicon-star:before {
+    content: "\e006"; }
+  .bootstrap-custom .glyphicon-star-empty:before {
+    content: "\e007"; }
+  .bootstrap-custom .glyphicon-user:before {
+    content: "\e008"; }
+  .bootstrap-custom .glyphicon-film:before {
+    content: "\e009"; }
+  .bootstrap-custom .glyphicon-th-large:before {
+    content: "\e010"; }
+  .bootstrap-custom .glyphicon-th:before {
+    content: "\e011"; }
+  .bootstrap-custom .glyphicon-th-list:before {
+    content: "\e012"; }
+  .bootstrap-custom .glyphicon-ok:before {
+    content: "\e013"; }
+  .bootstrap-custom .glyphicon-remove:before {
+    content: "\e014"; }
+  .bootstrap-custom .glyphicon-zoom-in:before {
+    content: "\e015"; }
+  .bootstrap-custom .glyphicon-zoom-out:before {
+    content: "\e016"; }
+  .bootstrap-custom .glyphicon-off:before {
+    content: "\e017"; }
+  .bootstrap-custom .glyphicon-signal:before {
+    content: "\e018"; }
+  .bootstrap-custom .glyphicon-cog:before {
+    content: "\e019"; }
+  .bootstrap-custom .glyphicon-trash:before {
+    content: "\e020"; }
+  .bootstrap-custom .glyphicon-home:before {
+    content: "\e021"; }
+  .bootstrap-custom .glyphicon-file:before {
+    content: "\e022"; }
+  .bootstrap-custom .glyphicon-time:before {
+    content: "\e023"; }
+  .bootstrap-custom .glyphicon-road:before {
+    content: "\e024"; }
+  .bootstrap-custom .glyphicon-download-alt:before {
+    content: "\e025"; }
+  .bootstrap-custom .glyphicon-download:before {
+    content: "\e026"; }
+  .bootstrap-custom .glyphicon-upload:before {
+    content: "\e027"; }
+  .bootstrap-custom .glyphicon-inbox:before {
+    content: "\e028"; }
+  .bootstrap-custom .glyphicon-play-circle:before {
+    content: "\e029"; }
+  .bootstrap-custom .glyphicon-repeat:before {
+    content: "\e030"; }
+  .bootstrap-custom .glyphicon-refresh:before {
+    content: "\e031"; }
+  .bootstrap-custom .glyphicon-list-alt:before {
+    content: "\e032"; }
+  .bootstrap-custom .glyphicon-lock:before {
+    content: "\e033"; }
+  .bootstrap-custom .glyphicon-flag:before {
+    content: "\e034"; }
+  .bootstrap-custom .glyphicon-headphones:before {
+    content: "\e035"; }
+  .bootstrap-custom .glyphicon-volume-off:before {
+    content: "\e036"; }
+  .bootstrap-custom .glyphicon-volume-down:before {
+    content: "\e037"; }
+  .bootstrap-custom .glyphicon-volume-up:before {
+    content: "\e038"; }
+  .bootstrap-custom .glyphicon-qrcode:before {
+    content: "\e039"; }
+  .bootstrap-custom .glyphicon-barcode:before {
+    content: "\e040"; }
+  .bootstrap-custom .glyphicon-tag:before {
+    content: "\e041"; }
+  .bootstrap-custom .glyphicon-tags:before {
+    content: "\e042"; }
+  .bootstrap-custom .glyphicon-book:before {
+    content: "\e043"; }
+  .bootstrap-custom .glyphicon-bookmark:before {
+    content: "\e044"; }
+  .bootstrap-custom .glyphicon-print:before {
+    content: "\e045"; }
+  .bootstrap-custom .glyphicon-camera:before {
+    content: "\e046"; }
+  .bootstrap-custom .glyphicon-font:before {
+    content: "\e047"; }
+  .bootstrap-custom .glyphicon-bold:before {
+    content: "\e048"; }
+  .bootstrap-custom .glyphicon-italic:before {
+    content: "\e049"; }
+  .bootstrap-custom .glyphicon-text-height:before {
+    content: "\e050"; }
+  .bootstrap-custom .glyphicon-text-width:before {
+    content: "\e051"; }
+  .bootstrap-custom .glyphicon-align-left:before {
+    content: "\e052"; }
+  .bootstrap-custom .glyphicon-align-center:before {
+    content: "\e053"; }
+  .bootstrap-custom .glyphicon-align-right:before {
+    content: "\e054"; }
+  .bootstrap-custom .glyphicon-align-justify:before {
+    content: "\e055"; }
+  .bootstrap-custom .glyphicon-list:before {
+    content: "\e056"; }
+  .bootstrap-custom .glyphicon-indent-left:before {
+    content: "\e057"; }
+  .bootstrap-custom .glyphicon-indent-right:before {
+    content: "\e058"; }
+  .bootstrap-custom .glyphicon-facetime-video:before {
+    content: "\e059"; }
+  .bootstrap-custom .glyphicon-picture:before {
+    content: "\e060"; }
+  .bootstrap-custom .glyphicon-map-marker:before {
+    content: "\e062"; }
+  .bootstrap-custom .glyphicon-adjust:before {
+    content: "\e063"; }
+  .bootstrap-custom .glyphicon-tint:before {
+    content: "\e064"; }
+  .bootstrap-custom .glyphicon-edit:before {
+    content: "\e065"; }
+  .bootstrap-custom .glyphicon-share:before {
+    content: "\e066"; }
+  .bootstrap-custom .glyphicon-check:before {
+    content: "\e067"; }
+  .bootstrap-custom .glyphicon-move:before {
+    content: "\e068"; }
+  .bootstrap-custom .glyphicon-step-backward:before {
+    content: "\e069"; }
+  .bootstrap-custom .glyphicon-fast-backward:before {
+    content: "\e070"; }
+  .bootstrap-custom .glyphicon-backward:before {
+    content: "\e071"; }
+  .bootstrap-custom .glyphicon-play:before {
+    content: "\e072"; }
+  .bootstrap-custom .glyphicon-pause:before {
+    content: "\e073"; }
+  .bootstrap-custom .glyphicon-stop:before {
+    content: "\e074"; }
+  .bootstrap-custom .glyphicon-forward:before {
+    content: "\e075"; }
+  .bootstrap-custom .glyphicon-fast-forward:before {
+    content: "\e076"; }
+  .bootstrap-custom .glyphicon-step-forward:before {
+    content: "\e077"; }
+  .bootstrap-custom .glyphicon-eject:before {
+    content: "\e078"; }
+  .bootstrap-custom .glyphicon-chevron-left:before {
+    content: "\e079"; }
+  .bootstrap-custom .glyphicon-chevron-right:before {
+    content: "\e080"; }
+  .bootstrap-custom .glyphicon-plus-sign:before {
+    content: "\e081"; }
+  .bootstrap-custom .glyphicon-minus-sign:before {
+    content: "\e082"; }
+  .bootstrap-custom .glyphicon-remove-sign:before {
+    content: "\e083"; }
+  .bootstrap-custom .glyphicon-ok-sign:before {
+    content: "\e084"; }
+  .bootstrap-custom .glyphicon-question-sign:before {
+    content: "\e085"; }
+  .bootstrap-custom .glyphicon-info-sign:before {
+    content: "\e086"; }
+  .bootstrap-custom .glyphicon-screenshot:before {
+    content: "\e087"; }
+  .bootstrap-custom .glyphicon-remove-circle:before {
+    content: "\e088"; }
+  .bootstrap-custom .glyphicon-ok-circle:before {
+    content: "\e089"; }
+  .bootstrap-custom .glyphicon-ban-circle:before {
+    content: "\e090"; }
+  .bootstrap-custom .glyphicon-arrow-left:before {
+    content: "\e091"; }
+  .bootstrap-custom .glyphicon-arrow-right:before {
+    content: "\e092"; }
+  .bootstrap-custom .glyphicon-arrow-up:before {
+    content: "\e093"; }
+  .bootstrap-custom .glyphicon-arrow-down:before {
+    content: "\e094"; }
+  .bootstrap-custom .glyphicon-share-alt:before {
+    content: "\e095"; }
+  .bootstrap-custom .glyphicon-resize-full:before {
+    content: "\e096"; }
+  .bootstrap-custom .glyphicon-resize-small:before {
+    content: "\e097"; }
+  .bootstrap-custom .glyphicon-exclamation-sign:before {
+    content: "\e101"; }
+  .bootstrap-custom .glyphicon-gift:before {
+    content: "\e102"; }
+  .bootstrap-custom .glyphicon-leaf:before {
+    content: "\e103"; }
+  .bootstrap-custom .glyphicon-fire:before {
+    content: "\e104"; }
+  .bootstrap-custom .glyphicon-eye-open:before {
+    content: "\e105"; }
+  .bootstrap-custom .glyphicon-eye-close:before {
+    content: "\e106"; }
+  .bootstrap-custom .glyphicon-warning-sign:before {
+    content: "\e107"; }
+  .bootstrap-custom .glyphicon-plane:before {
+    content: "\e108"; }
+  .bootstrap-custom .glyphicon-calendar:before {
+    content: "\e109"; }
+  .bootstrap-custom .glyphicon-random:before {
+    content: "\e110"; }
+  .bootstrap-custom .glyphicon-comment:before {
+    content: "\e111"; }
+  .bootstrap-custom .glyphicon-magnet:before {
+    content: "\e112"; }
+  .bootstrap-custom .glyphicon-chevron-up:before {
+    content: "\e113"; }
+  .bootstrap-custom .glyphicon-chevron-down:before {
+    content: "\e114"; }
+  .bootstrap-custom .glyphicon-retweet:before {
+    content: "\e115"; }
+  .bootstrap-custom .glyphicon-shopping-cart:before {
+    content: "\e116"; }
+  .bootstrap-custom .glyphicon-folder-close:before {
+    content: "\e117"; }
+  .bootstrap-custom .glyphicon-folder-open:before {
+    content: "\e118"; }
+  .bootstrap-custom .glyphicon-resize-vertical:before {
+    content: "\e119"; }
+  .bootstrap-custom .glyphicon-resize-horizontal:before {
+    content: "\e120"; }
+  .bootstrap-custom .glyphicon-hdd:before {
+    content: "\e121"; }
+  .bootstrap-custom .glyphicon-bullhorn:before {
+    content: "\e122"; }
+  .bootstrap-custom .glyphicon-bell:before {
+    content: "\e123"; }
+  .bootstrap-custom .glyphicon-certificate:before {
+    content: "\e124"; }
+  .bootstrap-custom .glyphicon-thumbs-up:before {
+    content: "\e125"; }
+  .bootstrap-custom .glyphicon-thumbs-down:before {
+    content: "\e126"; }
+  .bootstrap-custom .glyphicon-hand-right:before {
+    content: "\e127"; }
+  .bootstrap-custom .glyphicon-hand-left:before {
+    content: "\e128"; }
+  .bootstrap-custom .glyphicon-hand-up:before {
+    content: "\e129"; }
+  .bootstrap-custom .glyphicon-hand-down:before {
+    content: "\e130"; }
+  .bootstrap-custom .glyphicon-circle-arrow-right:before {
+    content: "\e131"; }
+  .bootstrap-custom .glyphicon-circle-arrow-left:before {
+    content: "\e132"; }
+  .bootstrap-custom .glyphicon-circle-arrow-up:before {
+    content: "\e133"; }
+  .bootstrap-custom .glyphicon-circle-arrow-down:before {
+    content: "\e134"; }
+  .bootstrap-custom .glyphicon-globe:before {
+    content: "\e135"; }
+  .bootstrap-custom .glyphicon-wrench:before {
+    content: "\e136"; }
+  .bootstrap-custom .glyphicon-tasks:before {
+    content: "\e137"; }
+  .bootstrap-custom .glyphicon-filter:before {
+    content: "\e138"; }
+  .bootstrap-custom .glyphicon-briefcase:before {
+    content: "\e139"; }
+  .bootstrap-custom .glyphicon-fullscreen:before {
+    content: "\e140"; }
+  .bootstrap-custom .glyphicon-dashboard:before {
+    content: "\e141"; }
+  .bootstrap-custom .glyphicon-paperclip:before {
+    content: "\e142"; }
+  .bootstrap-custom .glyphicon-heart-empty:before {
+    content: "\e143"; }
+  .bootstrap-custom .glyphicon-link:before {
+    content: "\e144"; }
+  .bootstrap-custom .glyphicon-phone:before {
+    content: "\e145"; }
+  .bootstrap-custom .glyphicon-pushpin:before {
+    content: "\e146"; }
+  .bootstrap-custom .glyphicon-usd:before {
+    content: "\e148"; }
+  .bootstrap-custom .glyphicon-gbp:before {
+    content: "\e149"; }
+  .bootstrap-custom .glyphicon-sort:before {
+    content: "\e150"; }
+  .bootstrap-custom .glyphicon-sort-by-alphabet:before {
+    content: "\e151"; }
+  .bootstrap-custom .glyphicon-sort-by-alphabet-alt:before {
+    content: "\e152"; }
+  .bootstrap-custom .glyphicon-sort-by-order:before {
+    content: "\e153"; }
+  .bootstrap-custom .glyphicon-sort-by-order-alt:before {
+    content: "\e154"; }
+  .bootstrap-custom .glyphicon-sort-by-attributes:before {
+    content: "\e155"; }
+  .bootstrap-custom .glyphicon-sort-by-attributes-alt:before {
+    content: "\e156"; }
+  .bootstrap-custom .glyphicon-unchecked:before {
+    content: "\e157"; }
+  .bootstrap-custom .glyphicon-expand:before {
+    content: "\e158"; }
+  .bootstrap-custom .glyphicon-collapse-down:before {
+    content: "\e159"; }
+  .bootstrap-custom .glyphicon-collapse-up:before {
+    content: "\e160"; }
+  .bootstrap-custom .glyphicon-log-in:before {
+    content: "\e161"; }
+  .bootstrap-custom .glyphicon-flash:before {
+    content: "\e162"; }
+  .bootstrap-custom .glyphicon-log-out:before {
+    content: "\e163"; }
+  .bootstrap-custom .glyphicon-new-window:before {
+    content: "\e164"; }
+  .bootstrap-custom .glyphicon-record:before {
+    content: "\e165"; }
+  .bootstrap-custom .glyphicon-save:before {
+    content: "\e166"; }
+  .bootstrap-custom .glyphicon-open:before {
+    content: "\e167"; }
+  .bootstrap-custom .glyphicon-saved:before {
+    content: "\e168"; }
+  .bootstrap-custom .glyphicon-import:before {
+    content: "\e169"; }
+  .bootstrap-custom .glyphicon-export:before {
+    content: "\e170"; }
+  .bootstrap-custom .glyphicon-send:before {
+    content: "\e171"; }
+  .bootstrap-custom .glyphicon-floppy-disk:before {
+    content: "\e172"; }
+  .bootstrap-custom .glyphicon-floppy-saved:before {
+    content: "\e173"; }
+  .bootstrap-custom .glyphicon-floppy-remove:before {
+    content: "\e174"; }
+  .bootstrap-custom .glyphicon-floppy-save:before {
+    content: "\e175"; }
+  .bootstrap-custom .glyphicon-floppy-open:before {
+    content: "\e176"; }
+  .bootstrap-custom .glyphicon-credit-card:before {
+    content: "\e177"; }
+  .bootstrap-custom .glyphicon-transfer:before {
+    content: "\e178"; }
+  .bootstrap-custom .glyphicon-cutlery:before {
+    content: "\e179"; }
+  .bootstrap-custom .glyphicon-header:before {
+    content: "\e180"; }
+  .bootstrap-custom .glyphicon-compressed:before {
+    content: "\e181"; }
+  .bootstrap-custom .glyphicon-earphone:before {
+    content: "\e182"; }
+  .bootstrap-custom .glyphicon-phone-alt:before {
+    content: "\e183"; }
+  .bootstrap-custom .glyphicon-tower:before {
+    content: "\e184"; }
+  .bootstrap-custom .glyphicon-stats:before {
+    content: "\e185"; }
+  .bootstrap-custom .glyphicon-sd-video:before {
+    content: "\e186"; }
+  .bootstrap-custom .glyphicon-hd-video:before {
+    content: "\e187"; }
+  .bootstrap-custom .glyphicon-subtitles:before {
+    content: "\e188"; }
+  .bootstrap-custom .glyphicon-sound-stereo:before {
+    content: "\e189"; }
+  .bootstrap-custom .glyphicon-sound-dolby:before {
+    content: "\e190"; }
+  .bootstrap-custom .glyphicon-sound-5-1:before {
+    content: "\e191"; }
+  .bootstrap-custom .glyphicon-sound-6-1:before {
+    content: "\e192"; }
+  .bootstrap-custom .glyphicon-sound-7-1:before {
+    content: "\e193"; }
+  .bootstrap-custom .glyphicon-copyright-mark:before {
+    content: "\e194"; }
+  .bootstrap-custom .glyphicon-registration-mark:before {
+    content: "\e195"; }
+  .bootstrap-custom .glyphicon-cloud-download:before {
+    content: "\e197"; }
+  .bootstrap-custom .glyphicon-cloud-upload:before {
+    content: "\e198"; }
+  .bootstrap-custom .glyphicon-tree-conifer:before {
+    content: "\e199"; }
+  .bootstrap-custom .glyphicon-tree-deciduous:before {
+    content: "\e200"; }
+  .bootstrap-custom .glyphicon-cd:before {
+    content: "\e201"; }
+  .bootstrap-custom .glyphicon-save-file:before {
+    content: "\e202"; }
+  .bootstrap-custom .glyphicon-open-file:before {
+    content: "\e203"; }
+  .bootstrap-custom .glyphicon-level-up:before {
+    content: "\e204"; }
+  .bootstrap-custom .glyphicon-copy:before {
+    content: "\e205"; }
+  .bootstrap-custom .glyphicon-paste:before {
+    content: "\e206"; }
+  .bootstrap-custom .glyphicon-alert:before {
+    content: "\e209"; }
+  .bootstrap-custom .glyphicon-equalizer:before {
+    content: "\e210"; }
+  .bootstrap-custom .glyphicon-king:before {
+    content: "\e211"; }
+  .bootstrap-custom .glyphicon-queen:before {
+    content: "\e212"; }
+  .bootstrap-custom .glyphicon-pawn:before {
+    content: "\e213"; }
+  .bootstrap-custom .glyphicon-bishop:before {
+    content: "\e214"; }
+  .bootstrap-custom .glyphicon-knight:before {
+    content: "\e215"; }
+  .bootstrap-custom .glyphicon-baby-formula:before {
+    content: "\e216"; }
+  .bootstrap-custom .glyphicon-tent:before {
+    content: "\26fa"; }
+  .bootstrap-custom .glyphicon-blackboard:before {
+    content: "\e218"; }
+  .bootstrap-custom .glyphicon-bed:before {
+    content: "\e219"; }
+  .bootstrap-custom .glyphicon-apple:before {
+    content: "\f8ff"; }
+  .bootstrap-custom .glyphicon-erase:before {
+    content: "\e221"; }
+  .bootstrap-custom .glyphicon-hourglass:before {
+    content: "\231b"; }
+  .bootstrap-custom .glyphicon-lamp:before {
+    content: "\e223"; }
+  .bootstrap-custom .glyphicon-duplicate:before {
+    content: "\e224"; }
+  .bootstrap-custom .glyphicon-piggy-bank:before {
+    content: "\e225"; }
+  .bootstrap-custom .glyphicon-scissors:before {
+    content: "\e226"; }
+  .bootstrap-custom .glyphicon-bitcoin:before {
+    content: "\e227"; }
+  .bootstrap-custom .glyphicon-btc:before {
+    content: "\e227"; }
+  .bootstrap-custom .glyphicon-xbt:before {
+    content: "\e227"; }
+  .bootstrap-custom .glyphicon-yen:before {
+    content: "\00a5"; }
+  .bootstrap-custom .glyphicon-jpy:before {
+    content: "\00a5"; }
+  .bootstrap-custom .glyphicon-ruble:before {
+    content: "\20bd"; }
+  .bootstrap-custom .glyphicon-rub:before {
+    content: "\20bd"; }
+  .bootstrap-custom .glyphicon-scale:before {
+    content: "\e230"; }
+  .bootstrap-custom .glyphicon-ice-lolly:before {
+    content: "\e231"; }
+  .bootstrap-custom .glyphicon-ice-lolly-tasted:before {
+    content: "\e232"; }
+  .bootstrap-custom .glyphicon-education:before {
+    content: "\e233"; }
+  .bootstrap-custom .glyphicon-option-horizontal:before {
+    content: "\e234"; }
+  .bootstrap-custom .glyphicon-option-vertical:before {
+    content: "\e235"; }
+  .bootstrap-custom .glyphicon-menu-hamburger:before {
+    content: "\e236"; }
+  .bootstrap-custom .glyphicon-modal-window:before {
+    content: "\e237"; }
+  .bootstrap-custom .glyphicon-oil:before {
+    content: "\e238"; }
+  .bootstrap-custom .glyphicon-grain:before {
+    content: "\e239"; }
+  .bootstrap-custom .glyphicon-sunglasses:before {
+    content: "\e240"; }
+  .bootstrap-custom .glyphicon-text-size:before {
+    content: "\e241"; }
+  .bootstrap-custom .glyphicon-text-color:before {
+    content: "\e242"; }
+  .bootstrap-custom .glyphicon-text-background:before {
+    content: "\e243"; }
+  .bootstrap-custom .glyphicon-object-align-top:before {
+    content: "\e244"; }
+  .bootstrap-custom .glyphicon-object-align-bottom:before {
+    content: "\e245"; }
+  .bootstrap-custom .glyphicon-object-align-horizontal:before {
+    content: "\e246"; }
+  .bootstrap-custom .glyphicon-object-align-left:before {
+    content: "\e247"; }
+  .bootstrap-custom .glyphicon-object-align-vertical:before {
+    content: "\e248"; }
+  .bootstrap-custom .glyphicon-object-align-right:before {
+    content: "\e249"; }
+  .bootstrap-custom .glyphicon-triangle-right:before {
+    content: "\e250"; }
+  .bootstrap-custom .glyphicon-triangle-left:before {
+    content: "\e251"; }
+  .bootstrap-custom .glyphicon-triangle-bottom:before {
+    content: "\e252"; }
+  .bootstrap-custom .glyphicon-triangle-top:before {
+    content: "\e253"; }
+  .bootstrap-custom .glyphicon-console:before {
+    content: "\e254"; }
+  .bootstrap-custom .glyphicon-superscript:before {
+    content: "\e255"; }
+  .bootstrap-custom .glyphicon-subscript:before {
+    content: "\e256"; }
+  .bootstrap-custom .glyphicon-menu-left:before {
+    content: "\e257"; }
+  .bootstrap-custom .glyphicon-menu-right:before {
+    content: "\e258"; }
+  .bootstrap-custom .glyphicon-menu-down:before {
+    content: "\e259"; }
+  .bootstrap-custom .glyphicon-menu-up:before {
+    content: "\e260"; }
   .bootstrap-custom * {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -3333,285 +3872,6 @@
   .bootstrap-custom .list-group-item-text {
     margin-bottom: 0;
     line-height: 1.3; }
-  .bootstrap-custom .panel {
-    margin-bottom: 20px;
-    background-color: #fff;
-    border: 1px solid transparent;
-    border-radius: 4px;
-    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05); }
-  .bootstrap-custom .panel-body {
-    padding: 15px; }
-    .bootstrap-custom .panel-body:before, .bootstrap-custom .panel-body:after {
-      content: " ";
-      display: table; }
-    .bootstrap-custom .panel-body:after {
-      clear: both; }
-  .bootstrap-custom .panel-heading {
-    padding: 10px 15px;
-    border-bottom: 1px solid transparent;
-    border-top-right-radius: 3px;
-    border-top-left-radius: 3px; }
-    .bootstrap-custom .panel-heading > .dropdown .dropdown-toggle {
-      color: inherit; }
-  .bootstrap-custom .panel-title {
-    margin-top: 0;
-    margin-bottom: 0;
-    font-size: 16px;
-    color: inherit; }
-    .bootstrap-custom .panel-title > a,
-    .bootstrap-custom .panel-title > small,
-    .bootstrap-custom .panel-title > .small,
-    .bootstrap-custom .panel-title > small > a,
-    .bootstrap-custom .panel-title > .small > a {
-      color: inherit; }
-  .bootstrap-custom .panel-footer {
-    padding: 10px 15px;
-    background-color: #f5f5f5;
-    border-top: 1px solid #ddd;
-    border-bottom-right-radius: 3px;
-    border-bottom-left-radius: 3px; }
-  .bootstrap-custom .panel > .list-group,
-  .bootstrap-custom .panel > .panel-collapse > .list-group {
-    margin-bottom: 0; }
-    .bootstrap-custom .panel > .list-group .list-group-item,
-    .bootstrap-custom .panel > .panel-collapse > .list-group .list-group-item {
-      border-width: 1px 0;
-      border-radius: 0; }
-    .bootstrap-custom .panel > .list-group:first-child .list-group-item:first-child,
-    .bootstrap-custom .panel > .panel-collapse > .list-group:first-child .list-group-item:first-child {
-      border-top: 0;
-      border-top-right-radius: 3px;
-      border-top-left-radius: 3px; }
-    .bootstrap-custom .panel > .list-group:last-child .list-group-item:last-child,
-    .bootstrap-custom .panel > .panel-collapse > .list-group:last-child .list-group-item:last-child {
-      border-bottom: 0;
-      border-bottom-right-radius: 3px;
-      border-bottom-left-radius: 3px; }
-  .bootstrap-custom .panel > .panel-heading + .panel-collapse > .list-group .list-group-item:first-child {
-    border-top-right-radius: 0;
-    border-top-left-radius: 0; }
-  .bootstrap-custom .panel-heading + .list-group .list-group-item:first-child {
-    border-top-width: 0; }
-  .bootstrap-custom .list-group + .panel-footer {
-    border-top-width: 0; }
-  .bootstrap-custom .panel > .table,
-  .bootstrap-custom .panel > .table-responsive > .table,
-  .bootstrap-custom .panel > .panel-collapse > .table {
-    margin-bottom: 0; }
-    .bootstrap-custom .panel > .table caption,
-    .bootstrap-custom .panel > .table-responsive > .table caption,
-    .bootstrap-custom .panel > .panel-collapse > .table caption {
-      padding-left: 15px;
-      padding-right: 15px; }
-  .bootstrap-custom .panel > .table:first-child,
-  .bootstrap-custom .panel > .table-responsive:first-child > .table:first-child {
-    border-top-right-radius: 3px;
-    border-top-left-radius: 3px; }
-    .bootstrap-custom .panel > .table:first-child > thead:first-child > tr:first-child,
-    .bootstrap-custom .panel > .table:first-child > tbody:first-child > tr:first-child,
-    .bootstrap-custom .panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child,
-    .bootstrap-custom .panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child {
-      border-top-left-radius: 3px;
-      border-top-right-radius: 3px; }
-      .bootstrap-custom .panel > .table:first-child > thead:first-child > tr:first-child td:first-child,
-      .bootstrap-custom .panel > .table:first-child > thead:first-child > tr:first-child th:first-child,
-      .bootstrap-custom .panel > .table:first-child > tbody:first-child > tr:first-child td:first-child,
-      .bootstrap-custom .panel > .table:first-child > tbody:first-child > tr:first-child th:first-child,
-      .bootstrap-custom .panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child td:first-child,
-      .bootstrap-custom .panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child th:first-child,
-      .bootstrap-custom .panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child td:first-child,
-      .bootstrap-custom .panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child th:first-child {
-        border-top-left-radius: 3px; }
-      .bootstrap-custom .panel > .table:first-child > thead:first-child > tr:first-child td:last-child,
-      .bootstrap-custom .panel > .table:first-child > thead:first-child > tr:first-child th:last-child,
-      .bootstrap-custom .panel > .table:first-child > tbody:first-child > tr:first-child td:last-child,
-      .bootstrap-custom .panel > .table:first-child > tbody:first-child > tr:first-child th:last-child,
-      .bootstrap-custom .panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child td:last-child,
-      .bootstrap-custom .panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child th:last-child,
-      .bootstrap-custom .panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child td:last-child,
-      .bootstrap-custom .panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child th:last-child {
-        border-top-right-radius: 3px; }
-  .bootstrap-custom .panel > .table:last-child,
-  .bootstrap-custom .panel > .table-responsive:last-child > .table:last-child {
-    border-bottom-right-radius: 3px;
-    border-bottom-left-radius: 3px; }
-    .bootstrap-custom .panel > .table:last-child > tbody:last-child > tr:last-child,
-    .bootstrap-custom .panel > .table:last-child > tfoot:last-child > tr:last-child,
-    .bootstrap-custom .panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child,
-    .bootstrap-custom .panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child {
-      border-bottom-left-radius: 3px;
-      border-bottom-right-radius: 3px; }
-      .bootstrap-custom .panel > .table:last-child > tbody:last-child > tr:last-child td:first-child,
-      .bootstrap-custom .panel > .table:last-child > tbody:last-child > tr:last-child th:first-child,
-      .bootstrap-custom .panel > .table:last-child > tfoot:last-child > tr:last-child td:first-child,
-      .bootstrap-custom .panel > .table:last-child > tfoot:last-child > tr:last-child th:first-child,
-      .bootstrap-custom .panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child td:first-child,
-      .bootstrap-custom .panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child th:first-child,
-      .bootstrap-custom .panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child td:first-child,
-      .bootstrap-custom .panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child th:first-child {
-        border-bottom-left-radius: 3px; }
-      .bootstrap-custom .panel > .table:last-child > tbody:last-child > tr:last-child td:last-child,
-      .bootstrap-custom .panel > .table:last-child > tbody:last-child > tr:last-child th:last-child,
-      .bootstrap-custom .panel > .table:last-child > tfoot:last-child > tr:last-child td:last-child,
-      .bootstrap-custom .panel > .table:last-child > tfoot:last-child > tr:last-child th:last-child,
-      .bootstrap-custom .panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child td:last-child,
-      .bootstrap-custom .panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child th:last-child,
-      .bootstrap-custom .panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child td:last-child,
-      .bootstrap-custom .panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child th:last-child {
-        border-bottom-right-radius: 3px; }
-  .bootstrap-custom .panel > .panel-body + .table,
-  .bootstrap-custom .panel > .panel-body + .table-responsive,
-  .bootstrap-custom .panel > .table + .panel-body,
-  .bootstrap-custom .panel > .table-responsive + .panel-body {
-    border-top: 1px solid #ddd; }
-  .bootstrap-custom .panel > .table > tbody:first-child > tr:first-child th,
-  .bootstrap-custom .panel > .table > tbody:first-child > tr:first-child td {
-    border-top: 0; }
-  .bootstrap-custom .panel > .table-bordered,
-  .bootstrap-custom .panel > .table-responsive > .table-bordered {
-    border: 0; }
-    .bootstrap-custom .panel > .table-bordered > thead > tr > th:first-child,
-    .bootstrap-custom .panel > .table-bordered > thead > tr > td:first-child,
-    .bootstrap-custom .panel > .table-bordered > tbody > tr > th:first-child,
-    .bootstrap-custom .panel > .table-bordered > tbody > tr > td:first-child,
-    .bootstrap-custom .panel > .table-bordered > tfoot > tr > th:first-child,
-    .bootstrap-custom .panel > .table-bordered > tfoot > tr > td:first-child,
-    .bootstrap-custom .panel > .table-responsive > .table-bordered > thead > tr > th:first-child,
-    .bootstrap-custom .panel > .table-responsive > .table-bordered > thead > tr > td:first-child,
-    .bootstrap-custom .panel > .table-responsive > .table-bordered > tbody > tr > th:first-child,
-    .bootstrap-custom .panel > .table-responsive > .table-bordered > tbody > tr > td:first-child,
-    .bootstrap-custom .panel > .table-responsive > .table-bordered > tfoot > tr > th:first-child,
-    .bootstrap-custom .panel > .table-responsive > .table-bordered > tfoot > tr > td:first-child {
-      border-left: 0; }
-    .bootstrap-custom .panel > .table-bordered > thead > tr > th:last-child,
-    .bootstrap-custom .panel > .table-bordered > thead > tr > td:last-child,
-    .bootstrap-custom .panel > .table-bordered > tbody > tr > th:last-child,
-    .bootstrap-custom .panel > .table-bordered > tbody > tr > td:last-child,
-    .bootstrap-custom .panel > .table-bordered > tfoot > tr > th:last-child,
-    .bootstrap-custom .panel > .table-bordered > tfoot > tr > td:last-child,
-    .bootstrap-custom .panel > .table-responsive > .table-bordered > thead > tr > th:last-child,
-    .bootstrap-custom .panel > .table-responsive > .table-bordered > thead > tr > td:last-child,
-    .bootstrap-custom .panel > .table-responsive > .table-bordered > tbody > tr > th:last-child,
-    .bootstrap-custom .panel > .table-responsive > .table-bordered > tbody > tr > td:last-child,
-    .bootstrap-custom .panel > .table-responsive > .table-bordered > tfoot > tr > th:last-child,
-    .bootstrap-custom .panel > .table-responsive > .table-bordered > tfoot > tr > td:last-child {
-      border-right: 0; }
-    .bootstrap-custom .panel > .table-bordered > thead > tr:first-child > td,
-    .bootstrap-custom .panel > .table-bordered > thead > tr:first-child > th,
-    .bootstrap-custom .panel > .table-bordered > tbody > tr:first-child > td,
-    .bootstrap-custom .panel > .table-bordered > tbody > tr:first-child > th,
-    .bootstrap-custom .panel > .table-responsive > .table-bordered > thead > tr:first-child > td,
-    .bootstrap-custom .panel > .table-responsive > .table-bordered > thead > tr:first-child > th,
-    .bootstrap-custom .panel > .table-responsive > .table-bordered > tbody > tr:first-child > td,
-    .bootstrap-custom .panel > .table-responsive > .table-bordered > tbody > tr:first-child > th {
-      border-bottom: 0; }
-    .bootstrap-custom .panel > .table-bordered > tbody > tr:last-child > td,
-    .bootstrap-custom .panel > .table-bordered > tbody > tr:last-child > th,
-    .bootstrap-custom .panel > .table-bordered > tfoot > tr:last-child > td,
-    .bootstrap-custom .panel > .table-bordered > tfoot > tr:last-child > th,
-    .bootstrap-custom .panel > .table-responsive > .table-bordered > tbody > tr:last-child > td,
-    .bootstrap-custom .panel > .table-responsive > .table-bordered > tbody > tr:last-child > th,
-    .bootstrap-custom .panel > .table-responsive > .table-bordered > tfoot > tr:last-child > td,
-    .bootstrap-custom .panel > .table-responsive > .table-bordered > tfoot > tr:last-child > th {
-      border-bottom: 0; }
-  .bootstrap-custom .panel > .table-responsive {
-    border: 0;
-    margin-bottom: 0; }
-  .bootstrap-custom .panel-group {
-    margin-bottom: 20px; }
-    .bootstrap-custom .panel-group .panel {
-      margin-bottom: 0;
-      border-radius: 4px; }
-      .bootstrap-custom .panel-group .panel + .panel {
-        margin-top: 5px; }
-    .bootstrap-custom .panel-group .panel-heading {
-      border-bottom: 0; }
-      .bootstrap-custom .panel-group .panel-heading + .panel-collapse > .panel-body,
-      .bootstrap-custom .panel-group .panel-heading + .panel-collapse > .list-group {
-        border-top: 1px solid #ddd; }
-    .bootstrap-custom .panel-group .panel-footer {
-      border-top: 0; }
-      .bootstrap-custom .panel-group .panel-footer + .panel-collapse .panel-body {
-        border-bottom: 1px solid #ddd; }
-  .bootstrap-custom .panel-default {
-    border-color: #ddd; }
-    .bootstrap-custom .panel-default > .panel-heading {
-      color: #333333;
-      background-color: #f5f5f5;
-      border-color: #ddd; }
-      .bootstrap-custom .panel-default > .panel-heading + .panel-collapse > .panel-body {
-        border-top-color: #ddd; }
-      .bootstrap-custom .panel-default > .panel-heading .badge {
-        color: #f5f5f5;
-        background-color: #333333; }
-    .bootstrap-custom .panel-default > .panel-footer + .panel-collapse > .panel-body {
-      border-bottom-color: #ddd; }
-  .bootstrap-custom .panel-primary {
-    border-color: #ffc000; }
-    .bootstrap-custom .panel-primary > .panel-heading {
-      color: #fff;
-      background-color: #ffc000;
-      border-color: #ffc000; }
-      .bootstrap-custom .panel-primary > .panel-heading + .panel-collapse > .panel-body {
-        border-top-color: #ffc000; }
-      .bootstrap-custom .panel-primary > .panel-heading .badge {
-        color: #ffc000;
-        background-color: #fff; }
-    .bootstrap-custom .panel-primary > .panel-footer + .panel-collapse > .panel-body {
-      border-bottom-color: #ffc000; }
-  .bootstrap-custom .panel-success {
-    border-color: #d6e9c6; }
-    .bootstrap-custom .panel-success > .panel-heading {
-      color: #3c763d;
-      background-color: #dff0d8;
-      border-color: #d6e9c6; }
-      .bootstrap-custom .panel-success > .panel-heading + .panel-collapse > .panel-body {
-        border-top-color: #d6e9c6; }
-      .bootstrap-custom .panel-success > .panel-heading .badge {
-        color: #dff0d8;
-        background-color: #3c763d; }
-    .bootstrap-custom .panel-success > .panel-footer + .panel-collapse > .panel-body {
-      border-bottom-color: #d6e9c6; }
-  .bootstrap-custom .panel-info {
-    border-color: #bce8f1; }
-    .bootstrap-custom .panel-info > .panel-heading {
-      color: #31708f;
-      background-color: #d9edf7;
-      border-color: #bce8f1; }
-      .bootstrap-custom .panel-info > .panel-heading + .panel-collapse > .panel-body {
-        border-top-color: #bce8f1; }
-      .bootstrap-custom .panel-info > .panel-heading .badge {
-        color: #d9edf7;
-        background-color: #31708f; }
-    .bootstrap-custom .panel-info > .panel-footer + .panel-collapse > .panel-body {
-      border-bottom-color: #bce8f1; }
-  .bootstrap-custom .panel-warning {
-    border-color: #faebcc; }
-    .bootstrap-custom .panel-warning > .panel-heading {
-      color: #8a6d3b;
-      background-color: #fcf8e3;
-      border-color: #faebcc; }
-      .bootstrap-custom .panel-warning > .panel-heading + .panel-collapse > .panel-body {
-        border-top-color: #faebcc; }
-      .bootstrap-custom .panel-warning > .panel-heading .badge {
-        color: #fcf8e3;
-        background-color: #8a6d3b; }
-    .bootstrap-custom .panel-warning > .panel-footer + .panel-collapse > .panel-body {
-      border-bottom-color: #faebcc; }
-  .bootstrap-custom .panel-danger {
-    border-color: #ebccd1; }
-    .bootstrap-custom .panel-danger > .panel-heading {
-      color: #a94442;
-      background-color: #f2dede;
-      border-color: #ebccd1; }
-      .bootstrap-custom .panel-danger > .panel-heading + .panel-collapse > .panel-body {
-        border-top-color: #ebccd1; }
-      .bootstrap-custom .panel-danger > .panel-heading .badge {
-        color: #f2dede;
-        background-color: #a94442; }
-    .bootstrap-custom .panel-danger > .panel-footer + .panel-collapse > .panel-body {
-      border-bottom-color: #ebccd1; }
   .bootstrap-custom .embed-responsive {
     position: relative;
     display: block;
@@ -3969,112 +4229,5 @@
   .bootstrap-custom #danmu-up-chart .x.axis text {
     text-anchor: end !important;
     transform: rotate(-25deg); }
-  .bootstrap-custom table.dataTable {
-    clear: both;
-    margin-top: 6px !important;
-    margin-bottom: 6px !important;
-    max-width: none !important;
-    border-collapse: separate !important; }
-  .bootstrap-custom table.dataTable td, .bootstrap-custom table.dataTable th {
-    -webkit-box-sizing: content-box;
-    box-sizing: content-box; }
-  .bootstrap-custom table.dataTable td.dataTables_empty, .bootstrap-custom table.dataTable th.dataTables_empty {
-    text-align: center; }
-  .bootstrap-custom table.dataTable.nowrap th, .bootstrap-custom table.dataTable.nowrap td {
-    white-space: nowrap; }
-  .bootstrap-custom div.dataTables_wrapper div.dataTables_length label {
-    font-weight: normal;
-    text-align: left;
-    white-space: nowrap; }
-  .bootstrap-custom div.dataTables_wrapper div.dataTables_length select {
-    width: 75px;
-    display: inline-block; }
-  .bootstrap-custom div.dataTables_wrapper div.dataTables_filter {
-    text-align: right; }
-  .bootstrap-custom div.dataTables_wrapper div.dataTables_filter label {
-    font-weight: normal;
-    white-space: nowrap;
-    text-align: left; }
-  .bootstrap-custom div.dataTables_wrapper div.dataTables_filter input {
-    margin-left: 0.5em;
-    display: inline-block;
-    width: auto; }
-  .bootstrap-custom div.dataTables_wrapper div.dataTables_info {
-    padding-top: 8px;
-    white-space: nowrap; }
-  .bootstrap-custom div.dataTables_wrapper div.dataTables_paginate {
-    margin: 0;
-    white-space: nowrap;
-    text-align: right; }
-  .bootstrap-custom div.dataTables_wrapper div.dataTables_paginate ul.pagination {
-    margin: 2px 0;
-    white-space: nowrap; }
-  .bootstrap-custom div.dataTables_wrapper div.dataTables_processing {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 200px;
-    margin-left: -100px;
-    margin-top: -26px;
-    text-align: center;
-    padding: 1em 0; }
-  .bootstrap-custom table.dataTable thead > tr > th.sorting_asc, .bootstrap-custom table.dataTable thead > tr > th.sorting_desc, .bootstrap-custom table.dataTable thead > tr > th.sorting, .bootstrap-custom table.dataTable thead > tr > td.sorting_asc, .bootstrap-custom table.dataTable thead > tr > td.sorting_desc, .bootstrap-custom table.dataTable thead > tr > td.sorting {
-    padding-right: 30px; }
-  .bootstrap-custom table.dataTable thead > tr > th:active, .bootstrap-custom table.dataTable thead > tr > td:active {
-    outline: none; }
-  .bootstrap-custom table.dataTable thead .sorting, .bootstrap-custom table.dataTable thead .sorting_asc, .bootstrap-custom table.dataTable thead .sorting_desc, .bootstrap-custom table.dataTable thead .sorting_asc_disabled, .bootstrap-custom table.dataTable thead .sorting_desc_disabled {
-    cursor: pointer;
-    position: relative; }
-  .bootstrap-custom table.dataTable thead .sorting:after, .bootstrap-custom table.dataTable thead .sorting_asc:after, .bootstrap-custom table.dataTable thead .sorting_desc:after, .bootstrap-custom table.dataTable thead .sorting_asc_disabled:after, .bootstrap-custom table.dataTable thead .sorting_desc_disabled:after {
-    position: absolute;
-    bottom: 8px;
-    right: 8px;
-    display: block;
-    font-family: 'Glyphicons Halflings';
-    opacity: 0.5; }
-  .bootstrap-custom table.dataTable thead .sorting:after {
-    opacity: 0.2;
-    content: "\e150"; }
-  .bootstrap-custom table.dataTable thead .sorting_asc:after {
-    content: "\e155"; }
-  .bootstrap-custom table.dataTable thead .sorting_desc:after {
-    content: "\e156"; }
-  .bootstrap-custom table.dataTable thead .sorting_asc_disabled:after, .bootstrap-custom table.dataTable thead .sorting_desc_disabled:after {
-    color: #eee; }
-  .bootstrap-custom div.dataTables_scrollHead table.dataTable {
-    margin-bottom: 0 !important; }
-  .bootstrap-custom div.dataTables_scrollBody table {
-    border-top: none;
-    margin-top: 0 !important;
-    margin-bottom: 0 !important; }
-  .bootstrap-custom div.dataTables_scrollBody table thead .sorting:after, .bootstrap-custom div.dataTables_scrollBody table thead .sorting_asc:after, .bootstrap-custom div.dataTables_scrollBody table thead .sorting_desc:after {
-    display: none; }
-  .bootstrap-custom div.dataTables_scrollBody table tbody tr:first-child th, .bootstrap-custom div.dataTables_scrollBody table tbody tr:first-child td {
-    border-top: none; }
-  .bootstrap-custom div.dataTables_scrollFoot table {
-    margin-top: 0 !important;
-    border-top: none; }
-  @media screen and (max-width: 767px) {
-    .bootstrap-custom div.dataTables_wrapper div.dataTables_length, .bootstrap-custom div.dataTables_wrapper div.dataTables_filter, .bootstrap-custom div.dataTables_wrapper div.dataTables_info, .bootstrap-custom div.dataTables_wrapper div.dataTables_paginate {
-      text-align: center; } }
-  .bootstrap-custom table.dataTable.table-condensed > thead > tr > th {
-    padding-right: 20px; }
-  .bootstrap-custom table.dataTable.table-condensed .sorting:after, .bootstrap-custom table.dataTable.table-condensed .sorting_asc:after, .bootstrap-custom table.dataTable.table-condensed .sorting_desc:after {
-    top: 6px;
-    right: 6px; }
-  .bootstrap-custom table.table-bordered.dataTable th, .bootstrap-custom table.table-bordered.dataTable td {
-    border-left-width: 0; }
-  .bootstrap-custom table.table-bordered.dataTable th:last-child, .bootstrap-custom table.table-bordered.dataTable th:last-child, .bootstrap-custom table.table-bordered.dataTable td:last-child, .bootstrap-custom table.table-bordered.dataTable td:last-child {
-    border-right-width: 0; }
-  .bootstrap-custom table.table-bordered.dataTable tbody th, .bootstrap-custom table.table-bordered.dataTable tbody td {
-    border-bottom-width: 0; }
-  .bootstrap-custom div.dataTables_scrollHead table.table-bordered {
-    border-bottom-width: 0; }
-  .bootstrap-custom div.table-responsive > div.dataTables_wrapper > div.row {
-    margin: 0; }
-  .bootstrap-custom div.table-responsive > div.dataTables_wrapper > div.row > div[class^="col-"]:first-child {
-    padding-left: 0; }
-  .bootstrap-custom div.table-responsive > div.dataTables_wrapper > div.row > div[class^="col-"]:last-child {
-    padding-right: 0; }
 
 /*# sourceMappingURL=bootstrap.css.map */
