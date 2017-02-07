@@ -23,11 +23,11 @@ $("link")[0].before(iLink);
  // $("link")[0].before(iLink); 
 
 
-  iLink = document.createElement("link");
-  iLink.rel="stylesheet";
-  iLink.type = 'text/css';
-  iLink.href= "https://cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css";
-  $("link")[0].before(iLink); 
+iLink = document.createElement("link");
+iLink.rel="stylesheet";
+iLink.type = 'text/css';
+iLink.href= serverIp + "assets/css/jquery.dataTables.min.css";
+$("link")[0].before(iLink); 
 
 
 
@@ -92,7 +92,15 @@ function initVisBotton(){
     btn.setAttribute("data-toggle","modal");
     btn.setAttribute("data-target","#myModal");
     btn.innerHTML = 'VIS <br>该视频';
-    $(".bgray-btn.show")[0].after(btn);
+    
+    if($(".bgray-btn.show").length == 1){
+        $(".bgray-btn.show")[0].after(btn);
+        initVisModal();
+    }else{
+        console.log("VIS button exists!");
+        return ;
+    }
+
 };
 
 /*
@@ -170,16 +178,17 @@ function initVisModal(){
     // vis.main();
 };
 
+iScript = document.createElement("script");
+iScript.type = "text/javascript";
+iScript.src = serverIp + "assets/js/vis.js";
+document.getElementsByTagName("head")[0].appendChild(iScript); 
+
+
 
 var timer2 = setInterval(function(){ 
-    iScript = document.createElement("script");
-    iScript.type = "text/javascript";
-    iScript.src = serverIp + "assets/js/vis.js";
-    document.getElementsByTagName("head")[0].appendChild(iScript); 
-
+   
     vis.main();
     initVisBotton();
-    initVisModal();
 
     console.log("Time2 Finished!");
 

@@ -1,5 +1,5 @@
 var config = {
-    'debug': true,
+    'debug': false,
 };
 
 var debug = config.debug ? console.log.bind(console) : function () {};
@@ -23,7 +23,7 @@ var vis = {
                 src = null;
             try {
                 src = document.querySelector('#bofqi iframe').src.replace(/^.*\?/, '');
-                console.log('src:' + src);
+                debug('src:' + src);
                 cid = Number(src.match(/cid=(\d+)/)[1]);
             } catch (e) {}
             if (!cid) try {
@@ -107,7 +107,7 @@ var vis = {
                     visualize(danmu);
                 },
                 error: function (xhr, textStatus, errorThrown) {
-                    console.log(textStatus);
+                    debug(textStatus);
                     if (textStatus == 'timeout') {
                         this.tryCount++;
                         if (this.tryCount <= this.retryLimit) {
@@ -487,7 +487,6 @@ var vis = {
                         format: function (d) {
                             var d2 = new Date();
                             var format = d3.time.format("%Y-%m-%d");
-                            // console.log(parseInt(d.submitTime) + d2.getTimezoneOffset() * 60000);
                             var date = new Date(parseInt(d.submitTime) * 1000 + d2.getTimezoneOffset() * 60000)
                             return format(date);
                         }
