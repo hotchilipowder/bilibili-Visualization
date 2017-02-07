@@ -3,7 +3,8 @@ bilibili视频可视化工具
 
 ## 使用方法
 
-[拖拽到书签栏](javascript:(function(){var script=document.createElement('script');script.setAttribute('src','http://vis.h12345jack.me/bilibili-Visualization/src/assets/js/addonvis.js');document.getElementsByTagName('head')[0].appendChild(script);})();)
+
+<a href="javascript:(function(){var script=document.createElement('script');script.setAttribute('src','http://vis.h12345jack.me/bilibili-Visualization/src/assets/js/addonvis.js');document.getElementsByTagName('head')[0].appendChild(script);})();">[拖拽到书签栏]</a>
 
 
 ## Todolist
