@@ -19,7 +19,7 @@
         .row {
             padding-top: 20px;
         }
-        
+
         button a,
         button a:active,
         button a:hover {
@@ -28,7 +28,7 @@
             width: 100%;
             display: inline-block;
         }
-        
+
         #clipper-bd {
             display: inline-block;
             height: 67px;
@@ -44,11 +44,35 @@
 <body>
     <div class="container">
         <div class="row">
-           
 
-            <div class="method">
-                <h3>使用书签栏工具</h3> <a onclick="alert('请将此链接拖拽到书签栏'); return false" href="javascript:(function(){var script=document.createElement('script');script.setAttribute('src','http://127.0.0.1:8888/assets/js/addonvis.js');document.getElementsByTagName('head')[0].appendChild(script);})();" id="clipper-bd">可视化当前视频</a>
-                 </div>
+
+          <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4>基于视频的可视化(bookmarklet)</h4></div>
+                    <div class="panel-body">
+                        <div class="method">
+                            <div class="col-md-6">
+                                <h4>使用书签栏工具</h4></div>
+                            <div class="col-md-6"><a onclick="alert('请将此链接拖拽到书签栏'); return false" href="javascript:(function(){var script=document.createElement('script');script.setAttribute('src','http://vis.h12345jack.me/bilibili-Visualization/src/assets/js/addonvis.js');document.getElementsByTagName('head')[0].appendChild(script);})();" id="clipper-bd">可视化B站视频弹幕</a>
+                            </div>
+                            <div class="col-md-12">
+
+                                <div class="web-clipper">
+                                    <h5>找不到书签栏？请使用快捷键Ctrl+Shift+B或者按照图示打开：</h5> <img src="img/7992b5cf.web-clipper_05.jpg" alt="找不到书签栏？请使用快捷键Ctrl+Shift+B或者按照图示打开"> </div>
+                            </div>
+                            <div class="col-md-12">
+
+                                <div class="web-clipper">
+                                    <h5>安装，使用遇到问题？请播放视频演示：</h5>
+
+                                    <video width="640" controls="controls" >
+                                        <source src="./video/video2.mp4"></source>
+                                    </video>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
         </div>
     </div>
 </body>
