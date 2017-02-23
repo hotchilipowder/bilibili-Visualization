@@ -35,6 +35,7 @@ var vis = {
                 cid = Number(src.match(/cid=(\d+)/)[1]);
             } catch (e) {}
             debug(cid + 'find here');
+
             if (cid) setTimeout(callback, 0, cid);
             else {
                 $.ajax({
@@ -62,8 +63,8 @@ var vis = {
         //
         var uptime_transform = function (datetime) {
             var result = datetime.match(/(\d{4})-(\d{2})-(\d{2})T(\d{2})(\d{2})/g);
-
         };
+
         var parseXML = function (content) {
             // debug(typeof(content));
             // var data = (new DOMParser()).parseFromString(content, 'application/xml');
