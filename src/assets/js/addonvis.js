@@ -76,6 +76,13 @@ var timer = setInterval(function(){
     iScript.src= serverIp + "assets/js/jquery.dataTables.js";
     $("head")[0].appendChild(iScript); 
 
+    iScript = document.createElement("script");
+    iScript.type = "text/javascript";
+    iScript.src = serverIp + "assets/js/vis.js";
+    document.getElementsByTagName("head")[0].appendChild(iScript); 
+
+
+
 
     console.log("Time1 Finished!");
 
@@ -177,11 +184,6 @@ function initVisModal(){
     console.log("done!");
     // vis.main();
 };
-
-iScript = document.createElement("script");
-iScript.type = "text/javascript";
-iScript.src = serverIp + "assets/js/vis.js";
-document.getElementsByTagName("head")[0].appendChild(iScript); 
 
 
 
