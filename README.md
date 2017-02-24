@@ -1,12 +1,12 @@
 # bilibili-Visualization
 bilibili视频可视化工具
 
-## 使用方法
+## How to use
 
 
 [bookmarklet](http://vis.h12345jack.me/bilibili-Visualization/src/index.html)
 
-# Introdunction
+## Introduction
 
 ![](http://ww1.sinaimg.cn/mw690/006C73MUly1fd1sake0twj30zc0ox10k)
 
@@ -15,8 +15,6 @@ bilibili视频可视化工具
 点击书签一次后，10s内完成可视化的图表，主要包括2个时间相关的图表，一些定类变量和数据详表。
 
 ![](http://ww1.sinaimg.cn/mw690/006C73MUly1fd1s72wh7qj310a0omjwg)![](http://ww1.sinaimg.cn/mw690/006C73MUly1fd1s72opxrj30nf0k2mzp)![](http://ww1.sinaimg.cn/mw690/006C73MUly1fd1s72rfqwj30xg0najwe)
-
-
 
 
 ## Todolist
