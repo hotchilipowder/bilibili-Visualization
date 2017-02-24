@@ -27,4 +27,4 @@ bilibili视频可视化工具
 - [ ] 出现错误时button不显示，将错误打印到控制态
 - [ ] 反向获取弹幕者id,及个人空间URL
 
-
+if you like it, star will help a lot.
