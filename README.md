@@ -5,6 +5,7 @@ bilibili视频可视化工具
 
 
 [bookmarklet](http://vis.h12345jack.me/bilibili-Visualization/src/index.html)
+! currently it works well in chrome 56, other browers are not tested. 
 
 ## Introduction
 
