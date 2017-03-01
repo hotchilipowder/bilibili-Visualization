@@ -1,16 +1,18 @@
 {
-  "name": "bilibiliVisualization",
+  "name": "bilibili-visualization",
   "version": "0.0.1",
   "description": "for bilibili visualization",
-  "author": "h12345jack<>,reclay<2868902382@qq.com>",
+  "author": "h12345jack <2868902382@qq.com>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/h12345jack/bilibili-Visualization"
+    "url": "git+https://github.com/h12345jack/bilibili-Visualization.git"
   },
   "license": "MIT",
-  "scripts": {
+  "scripts": {},
+  "dependencies": {
+    "bootstrap-sass": "^3.3.7",
+    "d3": "^4.7.0"
   },
-  "dependencies": {},
   "devDependencies": {
     "grunt": "^1.0.1",
     "grunt-contrib-clean": "^1.0.0",
@@ -21,5 +23,14 @@
     "grunt-contrib-sass": "^1.0.0",
     "grunt-contrib-uglify": "^2.0.0",
     "grunt-contrib-watch": "^1.0.0"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/h12345jack/bilibili-Visualization/issues"
+  },
+  "homepage": "https://github.com/h12345jack/bilibili-Visualization#readme",
+  "main": "Gruntfile.js",
+  "keywords": [
+    "visualization",
+    "bookmarklet"
+  ]
 }
