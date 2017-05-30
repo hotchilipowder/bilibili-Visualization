@@ -1,14 +1,19 @@
 
 var serverIp = 'http://127.0.0.1:3000/';
 
+//react
+iScript = document.createElement("script");
+iScript.type = "text/javascript";
+iScript.src = serverIp + '/static/js/bundle.js';
+document.getElementsByTagName("head")[0].appendChild(iScript); 
 
 
 // //添加一个VIS的BUTTON
 function initVisBotton(){
     var btn = document.createElement("div");
-    btn.setAttribute("class",'bootstrap-custom bgray-btn show');
+    // btn.setAttribute("class",'bootstrap-custom bgray-btn show');
     btn.setAttribute("id","root");
-
+    
     if($(".bgray-btn.show").length == 1){
         $(".bgray-btn.show")[0].after(btn);
     }else{
@@ -18,6 +23,9 @@ function initVisBotton(){
 };
 
 initVisBotton()
+
+
+
 // iLink = document.createElement("link");
 // iLink.rel="stylesheet";
 // iLink.type = 'text/css';
@@ -56,11 +64,7 @@ initVisBotton()
 // // document.getElementsByTagName("head")[0].appendChild(iScript);
 
 
-//react
-iScript = document.createElement("script");
-iScript.type = "text/javascript";
-iScript.src = serverIp + '/static/js/bundle.js';
-document.getElementsByTagName("head")[0].appendChild(iScript); 
+
 
 
 // //d3
