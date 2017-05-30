@@ -1,4 +1,4 @@
-
+import $ from 'jquery'
 // 将颜色的数值化为十六进制字符串表示
 export function RRGGBB(color){
 
@@ -15,38 +15,53 @@ export function lengthTransform (video_length) {
         let result = video_length.match(/\d{2,3}/g);
         return result.reduce(function (prev, cur, item, array) {
             return parseInt(prev) * 60 + parseInt(cur);
-        });
+    });
 };
 
 
-export function uptimeTransform(datetime){
-	let result = datetime.match(/(\d{4})-(\d{2})-(\d{2})T(\d{2})(\d{2})/g);
-}
+export function print_filter(filter) {
+    let f = eval(filter);
+    if (typeof (f.length) != "undefined") {} else {}
+    if (typeof (f.top) != "undefined") {
+        f = f.top(Infinity);
+    } else {}
+    if (typeof (f.dimension) != "undefined") {
+        f = f.dimension(function (d) {
+            return "";
+        }).top(Infinity);
+    } else {}
+    console.log(filter + "(" + f.length + ") = " + JSON.stringify(f).replace("[", "[\n\t").replace(/}\,/g, "},\n\t").replace("]", "\n]"));
+};
 
+var length_transform = function (video_length) {
+    var result = video_length.match(/\d{2,3}/g);
+    console.log(result);
+    return result.reduce(function (prev, cur, item, array) {
+        return parseInt(prev) * 60 + parseInt(cur);
+    });
+};
 
-export function dp_search(tree, path = []){
-    let render_list = []
-    console.log(tree);
-
-    if(tree.open === 1){
-      for(let j in tree.children){
-        render_list.push({
-          last_ddl_time: tree.children[j].last_ddl_time,
-          num_rows: tree.children[j].num_rows,
-          total_size: tree.children[j].total_size,
-          name: j,
-          path: [...path, j],
-          flag: tree.children[j].open
-        });
-        const tmp = dp_search(tree.children[j], [...path, j]);
-        render_list = [...render_list, ...tmp];
-      }
-    }
-    return render_list;
-}
-
-
-// function 解决之前的另外一个需求
-
-
-//
+export function parseXML(content) {
+    // console.log(typeof(content));
+    let data = (new DOMParser()).parseFromString(content, 'application/xml');
+    let video_length = $(".bilibili-player-video-time-total").text();
+    video_length = length_transform(video_length);
+    console.log(video_length);
+    return Array.apply(Array, data.querySelectorAll('d')).map(function (line) {
+        let info = line.getAttribute('p').split(','),
+            text = line.textContent;
+        return {
+            'text': text,
+            'video_len': video_length,
+            'time': Number(info[0]),
+            'mode': [undefined, 'R2L', 'R2L', 'R2L', 'BOTTOM', 'TOP'][Number(info[1])],
+            'size': Number(info[2]),
+            'color': RRGGBB(Number(info[3])),
+            'bottom': Number(info[5]) > 0,
+            'create': Number(info[4]),
+            'pool': Number(info[5]),
+            'sender': String(info[6]),
+            'dmid': Number(info[7]),
+        };
+    });
+};

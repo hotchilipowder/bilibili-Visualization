@@ -10,16 +10,17 @@ document.getElementsByTagName("head")[0].appendChild(iScript);
 
 // //添加一个VIS的BUTTON
 function initVisBotton(){
-    var btn = document.createElement("div");
     // btn.setAttribute("class",'bootstrap-custom bgray-btn show');
+    var btn = document.createElement("div");
     btn.setAttribute("id","root");
+    $("#bofqi")[0].append(btn)
     
-    if($(".bgray-btn.show").length == 1){
-        $(".bgray-btn.show")[0].after(btn);
-    }else{
-        console.log("VIS button exists!");
-        return ;
-    }
+    // if($(".bgray-btn.show").length == 1){
+    //     $(".bgray-btn.show")[0].after(btn);
+    // }else{
+    //     console.log("VIS button exists!");
+    //     return ;
+    // }
 };
 
 initVisBotton()

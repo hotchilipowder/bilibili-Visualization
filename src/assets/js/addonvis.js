@@ -6,15 +6,8 @@ var serverIp = 'http://127.0.0.1:3000/';
 // //添加一个VIS的BUTTON
 function initVisBotton(){
     var btn = document.createElement("div");
-    btn.setAttribute("class",'bootstrap-custom bgray-btn show');
     btn.setAttribute("id","root");
-
-    if($(".bgray-btn.show").length == 1){
-        $(".bgray-btn.show")[0].after(btn);
-    }else{
-        console.log("VIS button exists!");
-        return ;
-    }
+    $("#bofqi")[0].after(btn)
 };
 
 initVisBotton()
