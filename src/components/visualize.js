@@ -5,15 +5,15 @@ import crossfilter from 'crossfilter'
 
 export function visualize (csv_data) {
 
-    // let danmu_lineChart = dc.lineChart('#danmu-line-chart');
-    // let danmu_barChart = dc.barChart('#danmu-volume-chart');
+    let danmu_lineChart = dc.lineChart('#danmu-line-chart');
+    let danmu_barChart = dc.barChart('#danmu-volume-chart');
 
     let colorChart = dc.pieChart('#color-chart');
-    // let posChart = dc.pieChart('#pos-chart');
-    // let charNumChart = dc.pieChart('#char-chart');
+    let posChart = dc.pieChart('#pos-chart');
+    let charNumChart = dc.pieChart('#char-chart');
 
 
-    // let danmu_up_barChart = dc.barChart('#danmu-up-chart');
+    let danmu_up_barChart = dc.barChart('#danmu-up-chart');
 
     let data = [];
 
@@ -74,7 +74,7 @@ export function visualize (csv_data) {
     };
 
 
-
+    console.log(data,'data');
     let ndx = crossfilter(data);
     // print_filter(ndx)
     let all = ndx.groupAll();
@@ -139,141 +139,142 @@ export function visualize (csv_data) {
         return "#" + d;
     });
 
-    // posChart
-    //     .width(200)
-    //     .height(200)
-    //     .radius(80)
-    //     .innerRadius(30)
-    //     .dimension(pos)
-    //     .group(posGroup)
-    //     .colors(d3.scale.category10());
+    posChart
+        .width(200)
+        .height(200)
+        .radius(80)
+        .innerRadius(30)
+        .dimension(pos)
+        .group(posGroup)
+        .colors(d3.scale.category10());
 
-    // charNumChart
-    //     .width(200)
-    //     .height(200)
-    //     .radius(80)
-    //     .innerRadius(30)
-    //     .dimension(char_num)
-    //     .group(cnGroup)
-    //     .label(function (d) {
-    //         let begin = parseInt(d.key * max_char_num);
-    //         let end = parseInt((d.key + 1.0 / char_num_cut) * max_char_num);
-    //         return begin + '~' + end + '字';
-    //     })
-    //     .colors(d3.scale.ordinal().range(["#a6cee3","#1f78b4","#b2df8a","#33a02c","#fb9a99","#e31a1c","#fdbf6f","#ff7f00","#cab2d6","#6a3d9a"]));
+    charNumChart
+        .width(200)
+        .height(200)
+        .radius(80)
+        .innerRadius(30)
+        .dimension(char_num)
+        .group(cnGroup)
+        .label(function (d) {
+            let begin = parseInt(d.key * max_char_num);
+            let end = parseInt((d.key + 1.0 / char_num_cut) * max_char_num);
+            return begin + '~' + end + '字';
+        })
+        .colors(d3.scale.ordinal().range(["#a6cee3","#1f78b4","#b2df8a","#33a02c","#fb9a99","#e31a1c","#fdbf6f","#ff7f00","#cab2d6","#6a3d9a"]));
     
     
-    // charNumChart
-    //     .title(function (d) {
-    //         let begin = parseInt(d.key * max_char_num);
-    //         let end = parseInt((d.key + 1.0 / char_num_cut) * max_char_num);
-    //         return begin + '~' + end + '字' + ':' + d.value;
-    //     });
+    charNumChart
+        .title(function (d) {
+            let begin = parseInt(d.key * max_char_num);
+            let end = parseInt((d.key + 1.0 / char_num_cut) * max_char_num);
+            return begin + '~' + end + '字' + ':' + d.value;
+        });
 
-    // danmu_lineChart
-    //     .width(row_width)
-    //     .height(200)
-    //     .margins({
-    //         top: 20,
-    //         right: 50,
-    //         bottom: 20,
-    //         left: 40
-    //     })
-    //     .renderArea(true)
-    //     .transitionDuration(1000)
-    //     .dimension(cls)
-    //     .group(ratioGroup)
-    //     // .mouseZoomable(true)
-    //     .renderHorizontalGridLines(true)
-    //     .rangeChart(danmu_barChart)
-    //     .x(d3.scale.linear().domain([0, 1]))
-    //     .interpolate('cardinal')
-    //     .renderDataPoints(true)
-    //     .clipPadding(10)
-    //     .elasticY(true)
-    //     .brushOn(false)
-    //     .xAxis().tickFormat(function (v) {
-    //         let num = new Number(v);
-    //         num = num * video_length;
-    //         return num.toFixed(2).toHHMMSS();
-    //     });
-
-
-
-    // danmu_lineChart
-    //     .colors(function (d, i) {
-    //         return "#e8799d";
-    //     })
-    //     .yAxisLabel("弹幕数量");
+    danmu_lineChart
+        .width(row_width)
+        .height(200)
+        .margins({
+            top: 20,
+            right: 50,
+            bottom: 20,
+            left: 40
+        })
+        .renderArea(true)
+        .transitionDuration(1000)
+        .dimension(cls)
+        .group(ratioGroup)
+        // .mouseZoomable(true)
+        .renderHorizontalGridLines(true)
+        .rangeChart(danmu_barChart)
+        .x(d3.scale.linear().domain([0, 1]))
+        .interpolate('cardinal')
+        .renderDataPoints(true)
+        .clipPadding(10)
+        .elasticY(true)
+        .brushOn(false)
+        .xAxis().tickFormat(function (v) {
+            let num = new Number(v);
+            num = num * video_length;
+            return num.toFixed(2);
+        });
 
 
 
-    // danmu_lineChart
-    //     .renderTitle(true)
-    //     .title(function (d) {
-    //         let begin = new Number(d.key) * video_length;
-    //         let end = begin + 1.0 / time_cut * video_length;
-    //         let time = begin.toFixed(2).toHHMMSS() + '~' + end.toFixed(2).toHHMMSS();
-    //         return time + "的弹幕数为" + d.value;
-    //     });
+    danmu_lineChart
+        .colors(function (d, i) {
+            return "#e8799d";
+        })
+        .yAxisLabel("弹幕数量");
 
 
-    // danmu_barChart
-    //     .height(40)
-    //     .width(row_width)
-    //     .margins({
-    //         top: 0,
-    //         right: 50,
-    //         bottom: 20,
-    //         left: 40
-    //     })
-    //     .dimension(cls)
-    //     .group(ratioGroup)
-    //     .centerBar(true)
-    //     .gap(1)
-    //     .x(d3.scale.linear().domain([0, 1]))
-    //     .alwaysUseRounding(true)
-    //     .xUnits(function () {
-    //         return time_cut;
-    //     });
+
+    danmu_lineChart
+        .renderTitle(true)
+        .title(function (d) {
+            let begin = new Number(d.key) * video_length;
+            let end = begin + 1.0 / time_cut * video_length;
+            let time = begin.toFixed(2) + '~' + end.toFixed(2);
+            return time + "的弹幕数为" + d.value;
+        });
+
+
+    danmu_barChart
+        .height(40)
+        .width(row_width)
+        .margins({
+            top: 0,
+            right: 50,
+            bottom: 20,
+            left: 40
+        })
+        .dimension(cls)
+        .group(ratioGroup)
+        .centerBar(true)
+        .gap(1)
+        .x(d3.scale.linear().domain([0, 1]))
+        .alwaysUseRounding(true)
+        .xUnits(function () {
+            return time_cut;
+        });
     
     
-    // danmu_barChart
-    //     .colors(function (d, i) {
-    //         return "#e8799d";
-    //     });
+    danmu_barChart
+        .colors(function (d, i) {
+            return "#e8799d";
+        });
 
 
-    // // 
-    // // 
+    // 
+    // 
 
-    // danmu_up_barChart
-    //     .width(row_width)
-    //     .height(200)
-    //     .margins({
-    //         top: 0,
-    //         right: 50,
-    //         bottom: 20,
-    //         left: 40
-    //     })
-    //     .dimension(st)
-    //     .group(stGroup)
-    //     .centerBar(true)
-    //     .gap(2)
-    //     .x(d3.scale.linear().domain([0, 1]))
-    //     .alwaysUseRounding(true)
-    //     .xUnits(function () {
-    //         return up_time_cut;
-    //     })
-    //     .xAxis().tickFormat(function (v) {
-    //         console.log(v);
-    //         let num = new Number((v * (max_smt - min_smt) + min_smt) * 1000);
-    //         let m = new Date(num);
-    //         let dateString = m.getUTCFullYear() + "/" + (m.getUTCMonth() + 1) + "/" + m.getUTCDate() + " " + m.getUTCHours() + ":" + m.getUTCMinutes() + ":" + m.getUTCSeconds();
-    //         return dateString;
-    //     });
+    danmu_up_barChart
+        .width(row_width)
+        .height(200)
+        .margins({
+            top: 0,
+            right: 50,
+            bottom: 20,
+            left: 40
+        })
+        .dimension(st)
+        .group(stGroup)
+        .centerBar(true)
+        .gap(2)
+        .x(d3.scale.linear().domain([0, 1]))
+        .alwaysUseRounding(true)
+        .xUnits(function () {
+            return up_time_cut;
+        })
+        .xAxis().tickFormat(function (v) {
+            console.log(v);
+            let num = new Number((v * (max_smt - min_smt) + min_smt) * 1000);
+            let m = new Date(num);
+            let dateString = m.getUTCFullYear() + "/" + (m.getUTCMonth() + 1) + "/" + m.getUTCDate() + " " + m.getUTCHours() + ":" + m.getUTCMinutes() + ":" + m.getUTCSeconds();
+            return dateString;
+        });
 
-        
     dc.renderAll();
+    console.log("dc render");
+    
     $("#danmu-up-chart svg").attr("height", 250);
 };
