@@ -44,12 +44,7 @@ export default class DanmuUpload extends Component{
                     data:['Growth', 'Budget 2011', 'Budget 2012'],
                     itemGap: 5
                 },
-                grid: {
-                    top: '12%',
-                    left: '6%',
-                    right: '10%',
-                    containLabel: true
-                },
+                
                 xAxis: [
                     {
                         type : 'category',

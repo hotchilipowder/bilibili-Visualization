@@ -84,28 +84,33 @@ export default class MyDialogModal extends Component{
           onCancel={this.handleCancel}
           width="75%"
           height="100%"
+          style={{top:20}}
         > 
+        <div className="vis-custom">
+
           <Row className="data-row">
 					  <DanmuAera />
           </Row>
            <Row className="data-row">
             <DanmuUpload />
           </Row>
-          <Row style={{ marginLeft: "7%", height:"400px"}} className="data-row">
-            <Col span={10} offset={3}>
-              <DanmuPie />
-            </Col>
-             <Col span={10}>
-              <DanmuPie />
-            </Col>
 
-             <Col span={10}>
+          <Row className="data-row" style={{height: "300px"}}>
+            <Col span={8}>
               <DanmuPie />
             </Col>
+             <Col span={8}>
+             <DanmuPie />
+            </Col>
+             <Col span={8}>
+             <DanmuPie />
+            </Col>
           </Row>
-          <Row className="vis-custom">
-          <Table dataSource={dataSource} columns={columns} />
+
+          <Row className="data-row">
+            <Table dataSource={dataSource} columns={columns} />
           </Row>
+        </div>
 		  </Modal>
 		</div>
     );
