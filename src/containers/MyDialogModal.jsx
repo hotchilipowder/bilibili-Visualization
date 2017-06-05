@@ -9,7 +9,7 @@ import DanmuAera from '../components/DanmuAera'
 import DanmuUpload from '../components/DanmuUpload'
 import DanmuPie from '../components/DanmuPie'
 import DanmuDCVis from '../components/DanmuVisDc'
-import DanmuDataTable from '../components/DanmuDataTable'
+
 
 import '../styles/MyDialogModal.css'
 
@@ -84,11 +84,7 @@ export default class MyDialogModal extends Component{
         <Spin tips="Loading..." spinning={this.state.video_len > 0 ?false: true} delay={500}>
           <div className="vis-custom">
             {this.state.video_len && <DanmuDCVis {...this.state} />}
-            <Row>
-              <Col span={20} offset={2}>
-                <DanmuDataTable {...this.state}/>
-              </Col>
-            </Row>
+
           </div>
         </Spin>
 		  </Modal>

@@ -5,6 +5,7 @@ import $ from 'jquery'
 import crossfilter from 'crossfilter'
 import '../styles/dc.scss'
 import '../styles/bootstrap-sass/bootstrap.scss'
+import DanmuDataTable from './DanmuDataTable'
 var config = {
     'debug': false,
 };
@@ -26,6 +27,10 @@ function print_filter(filter) {
 };
 
 export default class DanmuDCVis extends Component{
+    state = {
+        all_data : [],
+        selected_data :[]
+    }
     constructor(props){
         super(props)
     }
@@ -91,7 +96,8 @@ export default class DanmuDCVis extends Component{
                 fontSize: csv_data[i].size,
                 color: csv_data[i].color,
                 submitTime: csv_data[i].create,
-                danmuType: csv_data[i].mode
+                danmuType: csv_data[i].mode,
+                sender: csv_data[i].sender
             })
         };
 
@@ -317,83 +323,90 @@ export default class DanmuDCVis extends Component{
         danmu_up_barChart
             .yAxisLabel("弹幕数量")
 
-
+        const datas = cls.top(Infinity);
         danmu_Table /* dc.dataTable('.dc-data-table', 'chartGroup') */
             .dimension(cls)
             // Data table does not use crossfilter group but rather a closure
             // as a grouping function
-            .group(function (d) {
-                return "当前时间段：" + d.column + "前10条弹幕信息";
+            .group(function(d){
+                return '';
             })
-            // (_optional_) max number of records to be shown, `default = 25`
-            .size(10)
-            // There are several ways to specify the columns; see the data-table documentation.
-            // This code demonstrates generating the column header automatically based on the columns.
-            .columns([
-            // Use the `d.date` field; capitalized automatically
-                {
-                    label: 'ShowTime',
-                    format: function (d) {
-                        var num = new Number(d.showTime);
-                        return num.toFixed(2).toHHMMSS();
-                    }
-            },
-            // Use `d.open`, `d.close`
-                {
-                    label: 'Color',
-                    format: function (d) {
-                        var return_svg = '<svg width="20" height="20"><rect width="30" height="20" style="fill:#';
-                        return_svg = return_svg + d.color + '"></rect></svg>'
-                        return return_svg;
-                    }
-            },
-            'fontSize', {
-                    label: 'Content',
-                    format: function (d) {
-                        var return_str = '<p style="font-size:' + d.fontSize * 0.5 + 'px;'
-                        return_str = return_str + '">'
-                        return_str = return_str + d.content + '</p>'
-                        return return_str;
-                    }
-            }, {
-                    label: "UpTime",
-                    format: function (d) {
-                        var d2 = new Date();
-                        var format = d3.time.format("%Y-%m-%d");
-                        var date = new Date(parseInt(d.submitTime) * 1000 + d2.getTimezoneOffset() * 60000)
-                        return format(date);
-                    }
-            }
-            // Use `d.volume`
-        ])
-            // (_optional_) sort using the given field, `default = function(d){return d;}`
-            .sortBy(function (d) {
-                return d.showTime;
-            })
-            // (_optional_) sort order, `default = d3.ascending`
-            .order(d3.ascending)
-            // (_optional_) custom renderlet to post-process chart using [D3](http://d3js.org)
-            .on('renderlet', function (table) {
-                table.selectAll('.dc-table-group').classed('info', true);
+            .size(Infinity)
+            .on('preRedraw', (chart)=>{
+                this.setState({
+                    selected_data:cls.top(Infinity)
+                });
+                console.log(this)
             });
+        //     // (_optional_) max number of records to be shown, `default = 25`
+        //     
+        //     // There are several ways to specify the columns; see the data-table documentation.
+        //     // This code demonstrates generating the column header automatically based on the columns.
+        //     .columns([
+        //     // Use the `d.date` field; capitalized automatically
+        //         {
+        //             label: 'ShowTime',
+        //             format: function (d) {
+        //                 datas.push(d)
+        //                 var num = new Number(d.showTime);
+        //                 return num.toFixed(2).toHHMMSS();
+        //             }
+        //     },
+        //     // Use `d.open`, `d.close`
+        //         {
+        //             label: 'Color',
+        //             format: function (d) {
+        //                 var return_svg = '<svg width="20" height="20"><rect width="30" height="20" style="fill:#';
+        //                 return_svg = return_svg + d.color + '"></rect></svg>'
+        //                 return return_svg;
+        //             }
+        //     },
+        //     'fontSize', {
+        //             label: 'Content',
+        //             format: function (d) {
+        //                 var return_str = '<p style="font-size:' + d.fontSize * 0.5 + 'px;'
+        //                 return_str = return_str + '">'
+        //                 return_str = return_str + d.content + '</p>'
+        //                 return return_str;
+        //             }
+        //     }, {
+        //             label: "UpTime",
+        //             format: function (d) {
+        //                 var d2 = new Date();
+        //                 var format = d3.time.format("%Y-%m-%d");
+        //                 var date = new Date(parseInt(d.submitTime) * 1000 + d2.getTimezoneOffset() * 60000)
+        //                 return format(date);
+        //             }
+        //     }
+        //     // Use `d.volume`
+        // ])
+
 
         danmu_Count /* dc.dataCount('.dc-data-count', 'chartGroup'); */
             .dimension(ndx)
             .group(all)
             .html({
-                some: '<strong>%filter-count</strong> selected out of <strong>%total-count</strong> records' +
-                    ' | <a href=\'javascript:dc.filterAll(); dc.renderAll();$("#danmu-up-chart svg").attr("height", 250);\'>Reset All</a>',
+                some: '<strong>%filter-count</strong> selected out of <strong>%total-count</strong> records',
                 all: '当前视频所有的弹幕都被选择，可以进行筛选'
             });
+        this.setState({
+            all_data: datas,
+            selected_data: datas
+        })
         dc.renderAll();
         console.log("render done!")
     }
     handleReset(){
         dc.filterAll(); 
         dc.renderAll();
+        const all_data = this.state.all_data;
+        this.setState({
+            selected_data: all_data
+        })
     }
 
     render(){
+        console.log(this.state)
         return (<div className="bootstrap-custom">
                     <div className="contain">
                         <div className="row">
@@ -412,7 +425,6 @@ export default class DanmuDCVis extends Component{
                                     <div id="danmu-up-chart"></div>
                                 </div>
                                 <div className="chart-title text-center">弹幕上传时间</div>
-                                
                             </div>
                             <div className="col-md-10 col-md-offset-1">
                                 <h3>弹幕数据概况</h3>
@@ -431,10 +443,13 @@ export default class DanmuDCVis extends Component{
                             <div className="col-md-10 col-md-offset-1">
                                 
                                 <h3>弹幕部分列表 <a onClick={() => this.handleReset()}>RESET</a></h3>
-                                <div className="dc-data-count">
+                                <div className="dc-data-count" style={{marginTop:40}}>
                                     <span className="filter-count"></span> 
                                 </div>
-                                <table className="table table-hover dc-data-table"></table>
+                               
+                            </div>
+                            <div className="col-md-10 col-md-offset-1">
+                                 <DanmuDataTable data={this.state.selected_data}/>
                             </div>
                         </div>
                     </div>

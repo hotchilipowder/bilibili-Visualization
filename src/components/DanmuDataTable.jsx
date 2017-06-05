@@ -4,28 +4,28 @@ import { Table } from 'antd'
 const columns = [
     {
         title: '出现时间',
-        key: 'time',
-        dataIndex: 'time'
+        key: 'showTime',
+        dataIndex: 'showTime'
     },{
         title: '出现位置',
-        key: 'mode',
-        dataIndex: 'mode'
+        key: 'danmuType',
+        dataIndex: 'danmuType'
     },{
         title: '颜色',
         key: 'color',
         dataIndex: 'color'
     },{
         title: '字体大小',
-        key: 'size',
-        dataIndex: 'size'
+        key: 'fontSize',
+        dataIndex: 'fontSize'
     },{
         title: '内容',
-        key: 'text',
-        dataIndex: 'text'
+        key: 'content',
+        dataIndex: 'content'
     },{
         title: '弹幕提交时间',
-        key: 'create',
-        dataIndex: 'create'
+        key: 'submitTime',
+        dataIndex: 'submitTime'
     },{
         title: '弹幕提交者',
         key: 'sender',
@@ -39,10 +39,10 @@ export default class DanmuDataTable extends Component{
     }
 
     render(){
-        const {csv_data} = this.props;
+        const {data} = this.props;
         return <Table 
                  columns = {columns}
-                 dataSource = {csv_data}
-                 />
+                 dataSource = {data}
+              />
     }
 }
