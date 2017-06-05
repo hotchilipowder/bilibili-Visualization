@@ -2,6 +2,7 @@ import React,{Component} from "react";
 import { Modal, Button, Table, Row, Col,Spin } from 'antd';
 import '../../node_modules/antd/lib/modal/style/index.less'
 import '../../node_modules/antd/lib/button/style/index.less'
+import '../../node_modules/antd/lib/spin/style/index.less'
 import {getDanmuXml, getCid, getVideoUpTime, getVideoLen } from '../apis/apis'
 import {parseXML} from '../utils/utils'
 import DanmuAera from '../components/DanmuAera'
@@ -41,6 +42,7 @@ export default class MyDialogModal extends Component{
     this.refresh()
   }
 
+
   showModal = () => {
     this.setState({
       visible: true,
@@ -60,21 +62,26 @@ export default class MyDialogModal extends Component{
   }
 
   
+  
   render() {
-
+    const modelHeader = (<div>
+                          <span>弹幕可视化报告</span>
+                          {this.state.video_len > 0 || <Button onClick={()=>this.refresh()}> Refresh </Button>}
+                          </div>);
     return (
       <div>
         <Button type="primary" onClick={this.showModal}>Open</Button>
+        
         <Modal
-          title="Basic Modal"
+          title={modelHeader}
           visible={this.state.visible}
           onOk={this.handleOk}
           onCancel={this.handleCancel}
           width="75%"
           height="100%"
-          style={{top:45}}
+          style={{top:65}}
         > 
-        <Spin tips="Loading..." spinning={this.state.video_len > 0? false: true} delay={500}>
+        <Spin tips="Loading..." spinning={this.state.video_len > 0 ?false: true} delay={500}>
           <div className="vis-custom">
             {this.state.video_len && <DanmuDCVis {...this.state} />}
             <Row>

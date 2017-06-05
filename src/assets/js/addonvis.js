@@ -1,16 +1,21 @@
-
+//src
 var serverIp = 'http://127.0.0.1:3000/';
 
-
-
-// //添加一个VIS的BUTTON
-function initVisBotton(){
+//react
+if($("div#root").length == 0){
+    iScript = document.createElement("script");
+    iScript.type = "text/javascript";
+    iScript.src = serverIp + '/static/js/bundle.js';
+    document.getElementsByTagName("head")[0].appendChild(iScript); 
     var btn = document.createElement("div");
     btn.setAttribute("id","root");
-    $("#bofqi")[0].after(btn)
-};
+    $("#bofqi")[0].append(btn);
+}else{
+    console.log("VIS button exists!");
+}
 
-initVisBotton()
+
+
 // iLink = document.createElement("link");
 // iLink.rel="stylesheet";
 // iLink.type = 'text/css';
@@ -49,11 +54,7 @@ initVisBotton()
 // // document.getElementsByTagName("head")[0].appendChild(iScript);
 
 
-//react
-iScript = document.createElement("script");
-iScript.type = "text/javascript";
-iScript.src = serverIp + '/static/js/bundle.js';
-document.getElementsByTagName("head")[0].appendChild(iScript); 
+
 
 
 // //d3
