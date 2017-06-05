@@ -2,6 +2,7 @@
   "name": "bilibili-vis",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://h12345jack.github.io/bilibili-Visualization",
   "dependencies": {
     "antd": "^2.10.2",
     "axios": "^0.16.1",
