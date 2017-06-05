@@ -1,0 +1,10 @@
+//sass sass/bootstrap.scss:bootstrap.css --watch
+.bootstrap-custom{
+    @import "./bootstrap/customVariables";
+    @import "./bootstrap/bootstrap";
+    @import "./bootstrap/custom";
+    h3{
+        font-size: 14px;
+    }
+}
+

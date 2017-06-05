@@ -113,8 +113,10 @@ module.exports = {
           /\.(js|jsx)(\?.*)?$/,
           /\.css$/,
           /\.less$/,
+          /\.scss$/,
           /\.json$/,
-          /\.svg$/
+          /\.svg$/,
+          /\.woff($|\?)|\.woff2($|\?)|\.ttf($|\?)|\.eot($|\?)/,
         ],
         loader: 'url',
         query: {
@@ -149,6 +151,10 @@ module.exports = {
         loader: 'style!css!less'
 
       },
+      {
+        test: /\.scss$/,
+        loader: 'style!css!sass'
+      },
       // JSON is not enabled by default in Webpack but both Node and Browserify
       // allow it implicitly so we also enable it.
       {
@@ -162,7 +168,11 @@ module.exports = {
         query: {
           name: 'static/media/[name].[hash:8].[ext]'
         }
-      }
+      },
+      {
+        test: /\.woff($|\?)|\.woff2($|\?)|\.ttf($|\?)|\.eot($|\?)/,
+        loader: 'url?limit=10000'
+       },
       // ** STOP ** Are you adding a new loader?
       // Remember to add the new extension(s) to the "url" loader exclusion list.
     ]

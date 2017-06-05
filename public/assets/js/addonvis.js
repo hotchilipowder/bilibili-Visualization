@@ -2,28 +2,17 @@
 var serverIp = 'http://127.0.0.1:3000/';
 
 //react
-iScript = document.createElement("script");
-iScript.type = "text/javascript";
-iScript.src = serverIp + '/static/js/bundle.js';
-document.getElementsByTagName("head")[0].appendChild(iScript); 
-
-
-// //添加一个VIS的BUTTON
-function initVisBotton(){
-    // btn.setAttribute("class",'bootstrap-custom bgray-btn show');
+if($("div#root").length == 0){
+    iScript = document.createElement("script");
+    iScript.type = "text/javascript";
+    iScript.src = serverIp + '/static/js/bundle.js';
+    document.getElementsByTagName("head")[0].appendChild(iScript); 
     var btn = document.createElement("div");
     btn.setAttribute("id","root");
-    $("#bofqi")[0].append(btn)
-    
-    // if($(".bgray-btn.show").length == 1){
-    //     $(".bgray-btn.show")[0].after(btn);
-    // }else{
-    //     console.log("VIS button exists!");
-    //     return ;
-    // }
-};
-
-initVisBotton()
+    $("#bofqi")[0].append(btn);
+}else{
+    console.log("VIS button exists!");
+}
 
 
 

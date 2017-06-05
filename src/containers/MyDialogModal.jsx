@@ -1,5 +1,5 @@
 import React,{Component} from "react";
-import { Modal, Button, Table, Row, Col } from 'antd';
+import { Modal, Button, Table, Row, Col,Spin } from 'antd';
 import '../../node_modules/antd/lib/modal/style/index.less'
 import '../../node_modules/antd/lib/button/style/index.less'
 import {getDanmuXml, getCid, getVideoUpTime, getVideoLen } from '../apis/apis'
@@ -8,7 +8,9 @@ import DanmuAera from '../components/DanmuAera'
 import DanmuUpload from '../components/DanmuUpload'
 import DanmuPie from '../components/DanmuPie'
 import DanmuDCVis from '../components/DanmuVisDc'
-import './MyDialogModal.css'
+import DanmuDataTable from '../components/DanmuDataTable'
+
+import '../styles/MyDialogModal.css'
 
 export default class MyDialogModal extends Component{
   state = { 
@@ -36,7 +38,7 @@ export default class MyDialogModal extends Component{
   }
 
   componentWillMount(){
-    this.refresh()    
+    this.refresh()
   }
 
   showModal = () => {
@@ -59,32 +61,6 @@ export default class MyDialogModal extends Component{
 
   
   render() {
-    console.log(this.state);
-    const dataSource = [{
-      key: '1',
-      name: '胡彦斌',
-      age: 32,
-      address: '西湖区湖底公园1号'
-    }, {
-      key: '2',
-      name: '胡彦祖',
-      age: 42,
-      address: '西湖区湖底公园1号'
-    }];
-
-    const columns = [{
-      title: '姓名',
-      dataIndex: 'name',
-      key: 'name',
-    }, {
-      title: '年龄',
-      dataIndex: 'age',
-      key: 'age',
-    }, {
-      title: '住址',
-      dataIndex: 'address',
-      key: 'address',
-    }];
 
     return (
       <div>
@@ -98,32 +74,16 @@ export default class MyDialogModal extends Component{
           height="100%"
           style={{top:45}}
         > 
-        <DanmuDCVis {...this.state}/>
-        <div className="vis-custom">
-
-          <Row className="data-row">
-					  <DanmuAera />
-          </Row>
-           <Row className="data-row">
-            <DanmuUpload />
-          </Row>
-
-          <Row className="data-row" style={{height: "300px"}}>
-            <Col span={8}>
-              <DanmuPie />
-            </Col>
-             <Col span={8}>
-             <DanmuPie />
-            </Col>
-             <Col span={8}>
-             <DanmuPie />
-            </Col>
-          </Row>
-
-          <Row className="data-row">
-            <Table dataSource={dataSource} columns={columns} />
-          </Row>
-        </div>
+        <Spin tips="Loading..." spinning={this.state.video_len > 0? false: true} delay={500}>
+          <div className="vis-custom">
+            {this.state.video_len && <DanmuDCVis {...this.state} />}
+            <Row>
+              <Col span={20} offset={2}>
+                <DanmuDataTable {...this.state}/>
+              </Col>
+            </Row>
+          </div>
+        </Spin>
 		  </Modal>
 		</div>
     );

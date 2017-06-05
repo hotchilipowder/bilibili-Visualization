@@ -3,7 +3,8 @@ import dc from 'dc'
 import d3 from 'd3'
 import $ from 'jquery'
 import crossfilter from 'crossfilter'
-
+import '../styles/dc.css'
+import '../styles/bootstrap-sass/bootstrap.scss'
 var config = {
     'debug': false,
 };
@@ -29,7 +30,9 @@ export default class DanmuDCVis extends Component{
         super(props)
     }
 
-    conponentDidMount(){
+    componentDidMount(){
+        console.log("here!!!");
+        
         var danmu_lineChart = dc.lineChart('#danmu-line-chart');
         var danmu_barChart = dc.barChart('#danmu-volume-chart');
 
@@ -47,7 +50,9 @@ export default class DanmuDCVis extends Component{
         var data = [];
         var time_cut = 100;
         //图标宽度
-        var row_width = 1000 * 10 / 12; 
+        var row_width = $("div.bootstrap-custom").width() * 10 /12;
+        console.log(row_width, 55);
+        row_width = row_width> 0 ? row_width: 400; 
         var up_time_cut = 100;
         //字数分割
         var char_num_cut = 5;
@@ -217,7 +222,7 @@ export default class DanmuDCVis extends Component{
             .height(200)
             .margins({
                 top: 20,
-                right: 50,
+                right: 0,
                 bottom: 20,
                 left: 40
             })
@@ -248,8 +253,6 @@ export default class DanmuDCVis extends Component{
             })
             .yAxisLabel("弹幕数量");
 
-
-
         danmu_lineChart
             .renderTitle(true)
             .title(function (d) {
@@ -265,7 +268,7 @@ export default class DanmuDCVis extends Component{
             .width(row_width)
             .margins({
                 top: 0,
-                right: 50,
+                right: 0,
                 bottom: 20,
                 left: 40
             })
@@ -286,16 +289,13 @@ export default class DanmuDCVis extends Component{
             });
 
 
-        // 
-        // 
-
         danmu_up_barChart
             .width(row_width)
-            .height(200)
+            .height(300)
             .margins({
-                top: 0,
-                right: 50,
-                bottom: 20,
+                top: 20,
+                right: 0,
+                bottom: 50,
                 left: 40
             })
             .dimension(st)
@@ -314,6 +314,8 @@ export default class DanmuDCVis extends Component{
                 var dateString = m.getUTCFullYear() + "/" + (m.getUTCMonth() + 1) + "/" + m.getUTCDate() + " " + m.getUTCHours() + ":" + m.getUTCMinutes() + ":" + m.getUTCSeconds();
                 return dateString;
             });
+        danmu_up_barChart
+            .yAxisLabel("弹幕数量")
 
 
         danmu_Table /* dc.dataTable('.dc-data-table', 'chartGroup') */
@@ -383,29 +385,37 @@ export default class DanmuDCVis extends Component{
                     ' | <a href=\'javascript:dc.filterAll(); dc.renderAll();$("#danmu-up-chart svg").attr("height", 250);\'>Reset All</a>',
                 all: '当前视频所有的弹幕都被选择，可以进行筛选'
             });
-
-
-       
         dc.renderAll();
-        $("#danmu-up-chart svg").attr("height", 250);
-
+        console.log("render done!")
+    }
+    handleReset(){
+        dc.filterAll(); 
+        dc.renderAll();
     }
 
     render(){
-        return (<div className="modal-body">
+        return (<div className="bootstrap-custom">
                     <div className="contain">
                         <div className="row">
                             <div className="col-md-10 col-md-offset-1">
-                                <div id="danmu-line-chart">
+                                 <h3>弹幕分布图</h3>
+                                <div className="row">
+                                    <div id="danmu-line-chart"></div>        
+                                    <div id="danmu-volume-chart"></div>
                                 </div>
-                                    <div className="chart-title text-center">弹幕出现时间</div>
-                                <div id="danmu-volume-chart">
-                                </div>
-                                <div id="danmu-up-chart">
-                                </div>
-                                <div className="chart-title text-center">弹幕上传时间</div>
+                                <div className="chart-title text-center">弹幕出现时间</div>
+                                
                             </div>
                             <div className="col-md-10 col-md-offset-1">
+                                <h3>弹幕上传信息</h3>
+                                <div className="row">
+                                    <div id="danmu-up-chart"></div>
+                                </div>
+                                <div className="chart-title text-center">弹幕上传时间</div>
+                                
+                            </div>
+                            <div className="col-md-10 col-md-offset-1">
+                                <h3>弹幕数据概况</h3>
                                 <div className="row">
                                     <div id="color-chart" className="col-md-4 pie-chart">
                                         <strong className="pie-title">颜色分布情况</strong>
@@ -419,17 +429,12 @@ export default class DanmuDCVis extends Component{
                                 </div>
                             </div>
                             <div className="col-md-10 col-md-offset-1">
-                                <h3>弹幕部分列表</h3>
+                                
+                                <h3>弹幕部分列表 <a onClick={() => this.handleReset()}>RESET</a></h3>
                                 <div className="dc-data-count">
                                     <span className="filter-count"></span> 
                                 </div>
-                                <table className="table table-hover dc-data-table">
-                                </table>
-                            </div>
-                            <div className="col-md-10 col-md-offset-1">
-                                <h3>弹幕详情列表</h3>
-                                <div id="full-data-table">
-                                </div>
+                                <table className="table table-hover dc-data-table"></table>
                             </div>
                         </div>
                     </div>
