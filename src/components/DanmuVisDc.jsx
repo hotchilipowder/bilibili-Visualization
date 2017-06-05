@@ -3,7 +3,7 @@ import dc from 'dc'
 import d3 from 'd3'
 import $ from 'jquery'
 import crossfilter from 'crossfilter'
-import '../styles/dc.css'
+import '../styles/dc.scss'
 import '../styles/bootstrap-sass/bootstrap.scss'
 var config = {
     'debug': false,
