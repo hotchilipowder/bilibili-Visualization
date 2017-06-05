@@ -2,15 +2,43 @@ import React,{Component} from "react";
 import { Modal, Button, Table, Row, Col } from 'antd';
 import '../../node_modules/antd/lib/modal/style/index.less'
 import '../../node_modules/antd/lib/button/style/index.less'
-import {getDanmuXml, getCid} from '../apis/apis'
+import {getDanmuXml, getCid, getVideoUpTime, getVideoLen } from '../apis/apis'
 import {parseXML} from '../utils/utils'
-import DanmuAera from '../components/danmuAera'
-import DanmuUpload from '../components/danmuUpload'
-import DanmuPie from '../components/danmuPie'
+import DanmuAera from '../components/DanmuAera'
+import DanmuUpload from '../components/DanmuUpload'
+import DanmuPie from '../components/DanmuPie'
+import DanmuDCVis from '../components/DanmuVisDc'
 import './MyDialogModal.css'
 
 export default class MyDialogModal extends Component{
-  state = { visible: false }
+  state = { 
+    visible: false,
+    data: "",
+    csv_data: [],
+    video_up_time: 0,
+    video_len: 0,
+    cid: ''
+  }
+
+  async refresh(){
+    const cid = await getCid();
+    const {data} = await getDanmuXml(cid);
+    const video_len = await getVideoLen();
+    const csv_data= parseXML(data,video_len);
+    const video_up_time = await getVideoUpTime();
+    this.setState({
+      data,
+      csv_data,
+      cid,
+      video_up_time,
+      video_len
+    });
+  }
+
+  componentWillMount(){
+    this.refresh()    
+  }
+
   showModal = () => {
     this.setState({
       visible: true,
@@ -29,25 +57,9 @@ export default class MyDialogModal extends Component{
     });
   }
 
-  // componentDidMount() {
-  // 	let cid = '17997926';
-  // 	getCid().then(res=>{
-  // 		cid = res;
-  // 		console.log(cid, '31 line');
-
-	// 	getDanmuXml(cid)
-	//   	   .then(res=>{
-	//   	   	let danmu = res.data;
-	//   	   	console.log(danmu);
-	//   	   	danmu = parseXML(danmu);
-	//   	   })
-	//   	   .catch(res=>{
-	//   	   	console.log(res)
-	//   	   })
-  // 	});
-  // }
-
+  
   render() {
+    console.log(this.state);
     const dataSource = [{
       key: '1',
       name: '胡彦斌',
@@ -84,8 +96,9 @@ export default class MyDialogModal extends Component{
           onCancel={this.handleCancel}
           width="75%"
           height="100%"
-          style={{top:20}}
+          style={{top:45}}
         > 
+        <DanmuDCVis {...this.state}/>
         <div className="vis-custom">
 
           <Row className="data-row">

@@ -41,12 +41,9 @@ var length_transform = function (video_length) {
     });
 };
 
-export function parseXML(content) {
+export function parseXML(content, video_length) {
     // console.log(typeof(content));
     let data = (new DOMParser()).parseFromString(content, 'application/xml');
-    let video_length = $(".bilibili-player-video-time-total").text();
-    video_length = length_transform(video_length);
-    console.log(video_length);
     return Array.apply(Array, data.querySelectorAll('d')).map(function (line) {
         let info = line.getAttribute('p').split(','),
             text = line.textContent;
