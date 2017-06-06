@@ -9,8 +9,8 @@ gulp.task('default', function() {
 });
 
 gulp.task('clean', function(){
-  gulp.src("../bilibili-vis-gh-pages/static/**")
-    .pipe(clean({force: true}));
+  return gulp.src("../bilibili-vis-gh-pages/static/**")
+      .pipe(clean({force: true}));
 
 })
 
