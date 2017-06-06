@@ -9,16 +9,16 @@ gulp.task('default', function() {
 });
 
 gulp.task('clean', function(){
-  gulp.src("./gh-pages/static/js")
+  gulp.src("../bilibili-vis-gh-pages/static/js")
     .pipe(clean());
 
-  gulp.src("./gh-pages/static/css")
+  gulp.src("../bilibili-vis-gh-pages/static/css")
     .pipe(clean());
 })
 
 gulp.task('copy_build',function(){
     return gulp.src("./build/**")
-            .pipe(gulp.dest('./gh-pages'));
+            .pipe(gulp.dest('../bilibili-vis-gh-pages'));
 });
 
 gulp.task('rename_bundle',['clean','copy_build'] ,function(){
@@ -30,20 +30,22 @@ gulp.task('rename_bundle',['clean','copy_build'] ,function(){
             path.extname = ".js";
             console.log(path)
           }))
-        .pipe(gulp.dest('./gh-pages/static/js'));
+        .pipe(gulp.dest('../bilibili-vis-gh-pages/assets/js'));
 });
 
-gulp.task('build',['rename_bundle'], function(){
+gulp.task('build_addonvis',function(){
+    return   gulp.src("../bilibili-vis-gh-pages/assets/js/addonvis.js")
+            .pipe(replace(/http:\/\/127\.0\.0\.1:3000/g, 'https://h12345jack.github.io/bilibili-Visualization'))
+            .pipe(gulp.dest("../bilibili-vis-gh-pages/static/js"));
 
-  gulp.src("./gh-pages/assets/js/addonvis.js")
-    .pipe(replace(/http:\/\/127\.0\.0\.1:3000/g, 'https://h12345jack.github.io/bilibili-Visualization'))
-    .pipe(gulp.dest("./gh-pages/static/js"));
-
+})
+gulp.task('build',['rename_bundle', 'build_addonvis'], function(){
+  
   return gulp.src("./gh-pages/index.html")
     .pipe(replace(/http:\/\/127\.0\.0\.1:3000/g, 'https://h12345jack.github.io/bilibili-Visualization'))
     .pipe(rename(function(path){
       console.log(path);
     }))
-    .pipe(gulp.dest("./gh-pages"))
+    .pipe(gulp.dest("../bilibili-vis-gh-pages"))
 
 })
