@@ -11,7 +11,7 @@ function post(url, data){
 
 export function getDanmuXml(cid){
     return axios({
-        url: 'http://comment.bilibili.com/'+cid+ '.xml',
+        url: 'https://comment.bilibili.com/'+cid+ '.xml',
         method: 'GET'
     })
 }
