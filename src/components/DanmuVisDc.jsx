@@ -442,8 +442,8 @@ export default class DanmuDCVis extends Component{
                             </div>
                             <div className="col-md-10 col-md-offset-1">
                                 
-                                <h3>弹幕部分列表 <a onClick={() => this.handleReset()}>RESET</a></h3>
-                                <div className="dc-data-count" style={{marginTop:40}}>
+                                <h3 style={{marginTop:40}}>弹幕部分列表 </h3>
+                                <div className="dc-data-count" style={{marginTop:20}}>
                                     <span className="filter-count"></span> 
                                 </div>
                                

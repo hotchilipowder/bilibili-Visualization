@@ -6,5 +6,17 @@
     h3{
         font-size: 14px;
     }
+
+    .table-header-wrapper > table{
+        margin-bottom: 0px;
+    }
+    ul.react-bootstrap-table-page-btns-ul{
+        margin-top: 0px;
+        display: flex;
+        justify-content: flex-end;
+    }
+    .react-bs-table-pagination > div.row{
+        margin-top: 0px;
+    }
 }
 

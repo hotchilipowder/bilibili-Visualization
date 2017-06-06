@@ -33,6 +33,7 @@ export function print_filter(filter) {
     console.log(filter + "(" + f.length + ") = " + JSON.stringify(f).replace("[", "[\n\t").replace(/}\,/g, "},\n\t").replace("]", "\n]"));
 };
 
+//视频长度获取
 var length_transform = function (video_length) {
     var result = video_length.match(/\d{2,3}/g);
     console.log(result);
@@ -41,6 +42,7 @@ var length_transform = function (video_length) {
     });
 };
 
+//parseXML对xml数据进行解析，得到数组
 export function parseXML(content, video_length) {
     // console.log(typeof(content));
     let data = (new DOMParser()).parseFromString(content, 'application/xml');
