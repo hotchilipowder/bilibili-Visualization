@@ -47,3 +47,8 @@ gulp.task('build',[ 'build_addonvis'], function(){
     .pipe(gulp.dest("../bilibili-vis-gh-pages"))
 
 })
+
+gulp.task('cp-gh-pages', function(){
+  return gulp.src('./gh-pages/**')
+        .pipe(gulp.dest('../bilibili-vis-gh-pages'));
+})

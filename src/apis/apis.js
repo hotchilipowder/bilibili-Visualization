@@ -9,6 +9,7 @@ function post(url, data){
 	})
 }
 
+//获取弹幕数据
 export function getDanmuXml(cid){
     return axios({
         url: 'https://comment.bilibili.com/'+cid+ '.xml',
@@ -16,6 +17,7 @@ export function getDanmuXml(cid){
     })
 }
 
+//获取cid
 export function getCid() {
     return axios({
             url:"",
@@ -30,6 +32,7 @@ export function getCid() {
         })
 };
 
+//获取视频长度
 export function getVideoLen(){
     var promise = new Promise(function(resolve, reject){
         let video_length = $(".bilibili-player-video-time-total").text();
@@ -44,6 +47,7 @@ export function getVideoLen(){
     return promise;
 }
 
+//获取视频上传时间
 export function getVideoUpTime(){
     var promise = new Promise(function(resolve, reject){
         let time = $("time").attr("datetime");
