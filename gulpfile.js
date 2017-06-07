@@ -47,3 +47,8 @@ gulp.task('build',['rename_bundle'], function(){
     .pipe(gulp.dest("./gh-pages"))
 
 })
+
+gulp.task('cp-gh-pages', function(){
+  return gulp.src('./gh-pages/**')
+        .pipe(gulp.dest('../bilibili-vis-gh-pages'));
+})
