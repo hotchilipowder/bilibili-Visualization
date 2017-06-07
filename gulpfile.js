@@ -9,7 +9,7 @@ gulp.task('default', function() {
 });
 
 gulp.task('clean', function(){
-  return gulp.src("../bilibili-vis-gh-pages/static/**")
+  return gulp.src("../bilibili-vis-gh-pages/static/**",{ read:false })
       .pipe(clean({force: true}));
 
 })

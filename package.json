@@ -68,7 +68,8 @@
   "scripts": {
     "start-dev": "gulp &&　npm run start",
     "start": "node scripts/start.js",
-    "build": "node scripts/build.js && gulp build",
+    "gh-pages": "gulp build",
+    "build": "node scripts/build.js && npm run gh-pages",
     "test": "node scripts/test.js --env=jsdom"
   },
   "jest": {
