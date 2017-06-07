@@ -6,21 +6,19 @@ bilibili视频可视化工具
 
 [bookmarklet](https://h12345jack.github.io/bilibili-Visualization/)
 
-! currently it works well in chrome 56, other browers are not tested. 
+**! currently it works well in chrome 56, firefox 53, safari 10, other browers are not tested. **
 
 ## Introduction
 
 ![](http://ww1.sinaimg.cn/mw690/006C73MUly1fd1sake0twj30zc0ox10k)
 
-需要从以上红色3个位置读取数据，请保证其加载完成，另外由于xpath稍有不同，因此请保证为HTML5播放器
+需要从以上红色3个位置读取数据，请保证其加载完成，另外由于xpath稍有不同，因此请保证为**HTML5播放器**
 
-点击书签一次后，10s内完成可视化的图表，主要包括2个时间相关的图表，一些定类变量和数据详表。
+点击书签一次后，10s内完成可视化的图表，如果失败请点击refresh，主要包括2个时间相关的图表，一些定类变量和数据详表。
 
-![](http://ww1.sinaimg.cn/mw690/006C73MUly1fd1s72wh7qj310a0omjwg)
+![image](https://ws1.sinaimg.cn/mw690/006C73MUly1fgd2e4zn1vj315l0owadr.jpg)
 
-![](http://ww1.sinaimg.cn/mw690/006C73MUly1fd1s72opxrj30nf0k2mzp)
-
-![](http://ww1.sinaimg.cn/mw690/006C73MUly1fd1s72rfqwj30xg0najwe)
+![image](https://ws4.sinaimg.cn/mw690/006C73MUly1fgd2e4zns7j315s0ni41n.jpg)
 
 
 ## Todolist
