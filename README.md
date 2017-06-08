@@ -33,10 +33,10 @@ bilibili视频可视化工具
 
 现在的项目不是helper的复刻，而是新的idea。解决可视化+概览的功能。
 
-### REACT+WEBPACK？
+### React+Webpack？
 答： 是一种尝试，希望用react的方式来做原来dom做的很多工作。
 
-### FEATURES
+### Features
 
 答：
 1. 弹幕分布 ===> 帮助发现最高潮的部分
