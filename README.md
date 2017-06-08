@@ -23,6 +23,19 @@ bilibili视频可视化工具
 ![image](https://ws4.sinaimg.cn/mw690/006C73MUly1fgd2e4zns7j315s0ni41n.jpg)
 
 
+## Ideas
+### Bookmakelet
+
+为啥不做成chrome插件？
+
+
+答：希望跨浏览器，插件方面[bilibili-helper](https://github.com/zacyu/bilibili-helper)搞得不错了。
+现在的项目不是helper的复刻，而是新的idea。解决可视化+概览的功能。
+
+### REACT+WEBPACK？
+答： 是一种尝试，希望用react的方式来做原来dom做的很多工作。
+
+
 ## Todolist
 - [x] 解决框无法使用的问题=>去掉JQuery,直接用B站的 => 使用antd + webpack
 - [x] 避免出现多个vis按钮 => done
