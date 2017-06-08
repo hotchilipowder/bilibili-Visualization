@@ -30,10 +30,19 @@ bilibili视频可视化工具
 
 
 答：希望跨浏览器，插件方面[bilibili-helper](https://github.com/zacyu/bilibili-helper)搞得不错了。
+
 现在的项目不是helper的复刻，而是新的idea。解决可视化+概览的功能。
 
 ### REACT+WEBPACK？
 答： 是一种尝试，希望用react的方式来做原来dom做的很多工作。
+
+### FEATURES
+
+答：
+1. 弹幕分布 ===> 帮助发现最高潮的部分
+2. 弹幕时间 ===> 帮助理解视频弹幕的特点，是隔了一段时间被发现还是一来就火爆
+3. 到处视频弹幕 ===> 到处csv
+
 
 
 ## Todolist
