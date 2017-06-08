@@ -29,18 +29,21 @@ export default class MyDialogModal extends Component{
             getVideoLen()
               .then(res=>{
                 const video_len = res;
-                  getVideoUpTime()
-                .then(res=>{
-                  const video_up_time = res;
-                  const csv_data = parseXML(data,video_len);
-                   this.setState({
-                      data,
-                      csv_data,
-                      cid,
-                      video_up_time,
-                      video_len
-                    });
-                });
+                getVideoUpTime()
+                  .then(res=>{
+                    const video_up_time = res;
+                    const csv_data = parseXML(data,video_len);
+                    this.setState({
+                        data,
+                        csv_data,
+                        cid,
+                        video_up_time,
+                        video_len
+                      });
+                  })
+                  .catch(res=>{
+                    console.log(res);
+                  });
                
               })
               .catch(res=>{
