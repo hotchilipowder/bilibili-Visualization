@@ -9,41 +9,46 @@ gulp.task('default', function() {
 });
 
 gulp.task('clean', function(){
-  gulp.src("./gh-pages/static/js")
-    .pipe(clean());
+  return gulp.src("../bilibili-vis-gh-pages/static/**",{ read:false })
+      .pipe(clean({force: true}));
 
-  gulp.src("./gh-pages/static/css")
-    .pipe(clean());
 })
 
-gulp.task('copy_build',function(){
+gulp.task('copy_build',['clean'],function(){
     return gulp.src("./build/**")
-            .pipe(gulp.dest('./gh-pages'));
+            .pipe(gulp.dest('../bilibili-vis-gh-pages'));
 });
 
-gulp.task('rename_bundle',['clean','copy_build'] ,function(){
+gulp.task('rename_bundle',['copy_build'] ,function(){
   
- return gulp.src("./build/static/js/*.js")
+    return gulp.src("./build/static/js/*.js")
         .pipe(rename(function(path){
             path.dirname = ".";
             path.basename = 'bundle';
             path.extname = ".js";
             console.log(path)
           }))
-        .pipe(gulp.dest('./gh-pages/static/js'));
+        .pipe(gulp.dest('../bilibili-vis-gh-pages/static/js'));
 });
 
-gulp.task('build',['rename_bundle'], function(){
+gulp.task('build_addonvis',['rename_bundle'],function(){
+    return   gulp.src("../bilibili-vis-gh-pages/assets/js/addonvis.js")
+            .pipe(replace(/http:\/\/127\.0\.0\.1:3000/g, 'https://h12345jack.github.io/bilibili-Visualization'))
+            .pipe(gulp.dest("../bilibili-vis-gh-pages/assets/js/"));
 
-  gulp.src("./gh-pages/assets/js/addonvis.js")
-    .pipe(replace(/http:\/\/127\.0\.0\.1:3000/g, 'https://h12345jack.github.io/bilibili-Visualization'))
-    .pipe(gulp.dest("./gh-pages/static/js"));
+})
+gulp.task('build',[ 'build_addonvis'], function(){
 
-  return gulp.src("./gh-pages/index.html")
+  return gulp.src("../bilibili-vis-gh-pages/index.html")
     .pipe(replace(/http:\/\/127\.0\.0\.1:3000/g, 'https://h12345jack.github.io/bilibili-Visualization'))
     .pipe(rename(function(path){
       console.log(path);
     }))
-    .pipe(gulp.dest("./gh-pages"))
+    .pipe(gulp.dest("../bilibili-vis-gh-pages"))
 
+})
+
+gulp.task('cp-gh-pages', function(){
+  return gulp.src('./gh-pages/**')
+        .pipe(gulp.dest('../bilibili-vis-gh-pages'));
 })

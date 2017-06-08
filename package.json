@@ -8,7 +8,6 @@
     "axios": "^0.16.1",
     "crossfilter": "^1.3.12",
     "dc": "^2.1.6",
-    "echarts-for-react": "^1.4.1",
     "jquery": "^3.2.1",
     "less-loader": "^4.0.3",
     "material-ui": "^0.18.1",
@@ -68,7 +67,8 @@
   "scripts": {
     "start-dev": "gulp &&　npm run start",
     "start": "node scripts/start.js",
-    "build": "node scripts/build.js && gulp build",
+    "gh-pages": "gulp build",
+    "build": "node scripts/build.js && npm run gh-pages",
     "test": "node scripts/test.js --env=jsdom"
   },
   "jest": {

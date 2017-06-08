@@ -386,8 +386,8 @@ export default class DanmuDCVis extends Component{
             .dimension(ndx)
             .group(all)
             .html({
-                some: '<strong>%filter-count</strong> selected out of <strong>%total-count</strong> records',
-                all: '当前视频所有的弹幕都被选择，可以进行筛选'
+                some: '<strong>%total-count</strong>条弹幕中的<strong>%filter-count</strong>条弹幕被选中',
+                all: '当前视频所有的弹幕(共%total-count条)被选择，可以进行筛选'
             });
         this.setState({
             all_data: datas,

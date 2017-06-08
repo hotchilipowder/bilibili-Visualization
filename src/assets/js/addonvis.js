@@ -14,7 +14,13 @@ if($("div#root").length == 0){
     console.log("VIS button exists!");
 }
 
-
+var strVar="";
+strVar += "<img src=\"http://127.0.0.1:3000/img/loading.gif\" width=\"26\">";
+var loading = document.createElement("div");
+loading.setAttribute("id","my-loading");
+loading.setAttribute("style","position: absolute;top: 0px;left: -80px;")
+loading.innerHTML = strVar;
+$("#bofqi")[0].appendChild(loading);
 
 // iLink = document.createElement("link");
 // iLink.rel="stylesheet";

@@ -5,9 +5,6 @@ import '../../node_modules/antd/lib/button/style/index.less'
 import '../../node_modules/antd/lib/spin/style/index.less'
 import {getDanmuXml, getCid, getVideoUpTime, getVideoLen } from '../apis/apis'
 import {parseXML} from '../utils/utils'
-import DanmuAera from '../components/DanmuAera'
-import DanmuUpload from '../components/DanmuUpload'
-import DanmuPie from '../components/DanmuPie'
 import DanmuDCVis from '../components/DanmuVisDc'
 
 import '../styles/MyDialogModal.css'
@@ -22,19 +19,45 @@ export default class MyDialogModal extends Component{
     cid: ''
   }
 
-  async refresh(){
-    const cid = await getCid();
-    const {data} = await getDanmuXml(cid);
-    const video_len = await getVideoLen();
-    const csv_data= parseXML(data,video_len);
-    const video_up_time = await getVideoUpTime();
-    this.setState({
-      data,
-      csv_data,
-      cid,
-      video_up_time,
-      video_len
-    });
+  refresh(){
+    getCid()
+      .then(res=>{
+        const cid = res;
+        getDanmuXml(cid)
+          .then(res=>{
+            const {data} = res;
+            getVideoLen()
+              .then(res=>{
+                const video_len = res;
+                getVideoUpTime()
+                  .then(res=>{
+                    const video_up_time = res;
+                    const csv_data = parseXML(data,video_len);
+                    this.setState({
+                        data,
+                        csv_data,
+                        cid,
+                        video_up_time,
+                        video_len
+                      });
+                  })
+                  .catch(res=>{
+                    console.log(res);
+                  });
+               
+              })
+              .catch(res=>{
+                console.log(res)
+              })
+          })
+          .catch(res=>{
+            console.log(res);
+          })
+      })
+      .catch(res=>{
+        console.log(res);
+      })
+
   }
 
   componentWillMount(){
@@ -64,6 +87,7 @@ export default class MyDialogModal extends Component{
   
   
   render() {
+    console.log(this.state);
     const modelHeader = (<div>
                           <span>弹幕可视化报告</span>
                           {this.state.video_len > 0 || <Button onClick={()=>this.refresh()}> Refresh </Button>}

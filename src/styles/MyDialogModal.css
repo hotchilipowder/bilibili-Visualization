@@ -1,3 +1,18 @@
 .data-row{
     margin-top: 60px
 }
+
+#color-chart{
+    display: flex;
+    justify-content: center;
+}
+
+#pos-chart{
+    display: flex;
+    justify-content: center;
+}
+
+#char-chart{
+    display: flex;
+    justify-content: center;
+}
