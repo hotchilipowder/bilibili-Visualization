@@ -1,10 +1,13 @@
-# bilibili-Visualization
+# [bilibili-Visualization](https://h12345jack.github.io/bilibili-Visualization/)
 bilibili视频可视化工具
 
 ## How to use
 
 
 [bookmarklet](https://h12345jack.github.io/bilibili-Visualization/)
+
+![](https://h12345jack.github.io/bilibili-Visualization/img/example.gif)
+
 
 **! currently it works well in chrome 56, firefox 53, safari 10, other browers are not tested. **
 
