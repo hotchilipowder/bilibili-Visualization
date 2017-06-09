@@ -12,19 +12,19 @@ var config = {
 
 var debug = config.debug ? console.log.bind(console) : function () {};
 
-function print_filter(filter) {
-    var f = eval(filter);
-    if (typeof (f.length) != "undefined") {} else {}
-    if (typeof (f.top) != "undefined") {
-        f = f.top(Infinity);
-    } else {}
-    if (typeof (f.dimension) != "undefined") {
-        f = f.dimension(function (d) {
-            return "";
-        }).top(Infinity);
-    } else {}
-    debug(filter + "(" + f.length + ") = " + JSON.stringify(f).replace("[", "[\n\t").replace(/}\,/g, "},\n\t").replace("]", "\n]"));
-};
+// function print_filter(filter) {
+//     var f = eval(filter);
+//     if (typeof (f.length) != "undefined") {} else {}
+//     if (typeof (f.top) != "undefined") {
+//         f = f.top(Infinity);
+//     } else {}
+//     if (typeof (f.dimension) != "undefined") {
+//         f = f.dimension(function (d) {
+//             return "";
+//         }).top(Infinity);
+//     } else {}
+//     debug(filter + "(" + f.length + ") = " + JSON.stringify(f).replace("[", "[\n\t").replace(/}\,/g, "},\n\t").replace("]", "\n]"));
+// };
 
 export default class DanmuDCVis extends Component{
     state = {
@@ -90,7 +90,7 @@ export default class DanmuDCVis extends Component{
             data.push({
                 showTime: csv_data[i].time,
                 videoRatio: csv_data[i].time / video_length,
-                column: parseInt(csv_data[i].time / video_length * time_cut) / time_cut,
+                column: parseInt(csv_data[i].time / video_length * time_cut, 10) / time_cut,
                 content: csv_data[i].text,
                 contentLen: csv_data[i].text.length,
                 fontSize: csv_data[i].size,
@@ -396,6 +396,7 @@ export default class DanmuDCVis extends Component{
         dc.renderAll();
         console.log("render done!")
     }
+    
     handleReset(){
         dc.filterAll(); 
         dc.renderAll();

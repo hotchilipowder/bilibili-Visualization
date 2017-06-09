@@ -1,5 +1,5 @@
 import React,{Component} from "react";
-import { Modal, Button, Table, Row, Col, Spin, Affix } from 'antd';
+import { Modal, Button, Row, Col, Spin, Affix } from 'antd';
 import '../../node_modules/antd/lib/modal/style/index.less'
 import '../../node_modules/antd/lib/button/style/index.less'
 import '../../node_modules/antd/lib/spin/style/index.less'
@@ -92,7 +92,6 @@ export default class MyDialogModal extends Component{
                           <span>弹幕可视化报告</span>
                           {this.state.video_len > 0 || <Button onClick={()=>this.refresh()}> Refresh </Button>}
                           </div>);
-    const window_width = document.body.clientWidth;
     return (
       <div>
         <Button type="primary" onClick={this.showModal}>Open</Button>
@@ -110,7 +109,7 @@ export default class MyDialogModal extends Component{
             <Affix offsetTop={120} target={()=> this.container}>
               <Button onClick={()=> this.refs.danmu_dc.handleReset()}>Reset</Button>
             </Affix>
-            {this.state.video_len && <DanmuDCVis {...this.state} ref="danmu_dc"/>}
+            {this.state.video_len ? <DanmuDCVis {...this.state} ref="danmu_dc"/> : <div></div>}
           </div>
         </Spin>
 		  </Modal>

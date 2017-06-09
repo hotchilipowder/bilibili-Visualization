@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import {Table, Icon} from 'antd'
 import crossfilter from 'crossfilter'
 import MyDialogModal from './containers/MyDialogModal'
 import './App.less'

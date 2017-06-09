@@ -1,4 +1,4 @@
-import $ from 'jquery'
+// import $ from 'jquery'
 // 将颜色的数值化为十六进制字符串表示
 export function RRGGBB(color){
 
@@ -14,7 +14,7 @@ export function RRGGBB(color){
 export function lengthTransform (video_length) {
         let result = video_length.match(/\d{2,3}/g);
         return result.reduce(function (prev, cur, item, array) {
-            return parseInt(prev) * 60 + parseInt(cur);
+            return parseInt(prev, 10) * 60 + parseInt(cur);
     });
 };
 

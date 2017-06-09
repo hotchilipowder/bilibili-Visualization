@@ -1,13 +1,13 @@
 import axios from 'axios'
 import $ from 'jquery'
 import {lengthTransform} from '../utils/utils'
-function post(url, data){
-	return axios({
-		url,
-		method: 'POST',
-		data
-	})
-}
+// function post(url, data){
+// 	return axios({
+// 		url,
+// 		method: 'POST',
+// 		data
+// 	})
+// }
 
 //获取弹幕数据
 export function getDanmuXml(cid){
@@ -37,7 +37,7 @@ export function getVideoLen(){
     var promise = new Promise(function(resolve, reject){
         var timer = setInterval(function(){
             let video_length = $(".bilibili-player-video-time-total").text();
-            if(video_length && video_length != '00:00'){
+            if(video_length && video_length !== '00:00'){
                 clearInterval(timer);
                 video_length = lengthTransform(video_length)
                 resolve(video_length);
@@ -58,7 +58,7 @@ export function getVideoUpTime(){
                 clearInterval(timer);
                 let video_length = new Date(time);
                 resolve(video_length);
-            }else if(counter>5){
+            }else if(counter > 5){
                 reject("not get time");
             }
             console.log(counter)
