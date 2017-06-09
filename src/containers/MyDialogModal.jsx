@@ -23,41 +23,23 @@ export default class MyDialogModal extends Component{
     getCid()
       .then(res=>{
         const cid = res;
-        getDanmuXml(cid)
-          .then(res=>{
+        Promise.all([getDanmuXml(res), getVideoLen(), getVideoUpTime()])
+          .then(([res, video_len, video_up_time]) =>{
             const {data} = res;
-            getVideoLen()
-              .then(res=>{
-                const video_len = res;
-                getVideoUpTime()
-                  .then(res=>{
-                    const video_up_time = res;
-                    const csv_data = parseXML(data,video_len);
-                    this.setState({
-                        data,
-                        csv_data,
-                        cid,
-                        video_up_time,
-                        video_len
-                      });
-                  })
-                  .catch(res=>{
-                    console.log(res);
-                  });
-               
-              })
-              .catch(res=>{
-                console.log(res)
-              })
-          })
-          .catch(res=>{
-            console.log(res);
+            const csv_data = parseXML(data,video_len);
+            // console.log("here",data, video_len, video_up_time);
+            this.setState({
+                data,
+                csv_data,
+                cid,
+                video_up_time,
+                video_len
+            })
           })
       })
-      .catch(res=>{
-        console.log(res);
+      .catch(error=>{
+        console.log(error);
       })
-
   }
 
   componentWillMount(){
