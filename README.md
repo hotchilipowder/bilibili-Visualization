@@ -12,7 +12,7 @@ bilibili视频可视化工具
 
 ## Introduction
 
-![image](http://wx2.sinaimg.cn/large/006C73MUly1fgjdt4xmkzj323m12wkjl.jpg)
+![image](http://wx2.sinaimg.cn/mw690/006C73MUly1fgjdt4xmkzj323m12wkjl.jpg)
 
 请保证为**HTML5播放器**
 
