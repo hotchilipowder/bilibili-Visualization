@@ -12,9 +12,9 @@ bilibili视频可视化工具
 
 ## Introduction
 
-![](http://ww1.sinaimg.cn/mw690/006C73MUly1fd1sake0twj30zc0ox10k)
+![image](http://wx2.sinaimg.cn/large/006C73MUly1fgjdt4xmkzj323m12wkjl.jpg)
 
-需要从以上红色3个位置读取数据，请保证其加载完成，另外由于xpath稍有不同，因此请保证为**HTML5播放器**
+请保证为**HTML5播放器**
 
 点击书签一次后，10s内完成可视化的图表，如果失败请点击refresh。
 
