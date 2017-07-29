@@ -2,7 +2,7 @@
 var serverIp = 'http://127.0.0.1:3000/';
 
 //react
-if($("div#root").length == 0){
+if(document.querySelectorAll("div#root").length == 0){
     iScript = document.createElement("script");
     iScript.type = "text/javascript";
     iScript.src = serverIp + '/static/js/bundle.js';
