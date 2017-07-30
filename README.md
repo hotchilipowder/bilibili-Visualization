@@ -53,8 +53,9 @@ bilibili视频可视化工具
 - [x] 避免多次点击无效的情况 => done
 - [x] 出现错误时button不显示，将错误打印到控制态 => 出错refresh
 - [x] 更友好的使用说明 => maybe more friendly
+- [x] 反向获取弹幕者id,及个人空间URL => get idea from [
+bilibili-search](https://devhub.io/repos/shafferjohn-bilibili-search)
 - [ ] 更多的视频相关元数据信息 => doing
 - [ ] 双击跳转到指定视频页面位置 => doing
-- [ ] 反向获取弹幕者id,及个人空间URL => doing
 
 if you like it, star will help a lot.
