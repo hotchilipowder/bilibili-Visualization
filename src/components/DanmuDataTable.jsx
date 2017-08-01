@@ -21,6 +21,8 @@ export default class DanmuDataTable extends Component{
         if(him > 0){
             return <span>
                         <Icon type="arrow-right" /><a href={him_url} target="_black" title={cell}>{him}</a>
+                        <br/>
+                        <span>hash={cell}</span>
                     </span>
         }else{
             return <div>
