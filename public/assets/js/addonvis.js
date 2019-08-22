@@ -9,7 +9,7 @@ if(document.querySelectorAll("div#root").length == 0){
     document.getElementsByTagName("head")[0].appendChild(iScript); 
     var btn = document.createElement("div");
     btn.setAttribute("id","root");
-    $("#bofqi")[0].append(btn);
+    $("#bilibiliPlayer")[0].append(btn);
 }else{
     console.log("VIS button exists!");
 }
